@@ -42,23 +42,34 @@
                 </Label>
                 <TextField fx:id="enterUsernameField" layoutX="14.0" layoutY="165.0" prefHeight="26.0" prefWidth="173.0" promptText="Nume de utilizator" />
                 <PasswordField fx:id="enterPasswordField" layoutX="14.0" layoutY="226.0" prefHeight="26.0" prefWidth="173.0" promptText="Parola" />
-                <Button fx:id="login" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="91.0" text="Autentificare" />
+                <Button fx:id="login" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #f76300;" text="Autentificare" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Button>
                 <ImageView fx:id="giraffeImageView" fitHeight="25.0" fitWidth="38.0" layoutX="70.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../ProiectFis/giraffe.png" />
                     </image>
                 </ImageView>
-                <Label fx:id="loginMessage" layoutX="21.0" layoutY="337.0" prefHeight="19.0" prefWidth="235.0" textFill="#f76300">
+                <Label fx:id="loginMessage" alignment="CENTER" layoutX="21.0" layoutY="337.0" prefHeight="19.0" prefWidth="235.0" textFill="#f76300">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </Label>
-                <Button fx:id="cancelButton" layoutX="142.0" layoutY="284.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="91.0" text="Cancel" />
+                <Button fx:id="cancelButton" layoutX="177.0" layoutY="364.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #f76300;" text="Cancel" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Button>
                 <ImageView fx:id="giraffe2ImageView" fitHeight="25.0" fitWidth="38.0" layoutX="152.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../ProiectFis/giraffe2.png" />
                     </image>
                 </ImageView>
+                <Button fx:id="înregistrareButton" layoutX="142.0" layoutY="284.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #f76300;" text="Înregistrare" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
             </children>
         </AnchorPane>
     </right>
