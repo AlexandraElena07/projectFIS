@@ -1,7 +1,9 @@
 package com.example.projectfis;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -10,6 +12,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.stage.StageStyle;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -39,6 +43,8 @@ public class LoginController implements Initializable {
     private TextField enterUsernameField;
     @FXML
     private PasswordField enterPasswordField;
+    @FXML
+    private Button inregistrareButton;
 
 
 
@@ -79,6 +85,13 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
+    public void inregistrareButtonOnAction(ActionEvent event) {
+        //Stage stage = (Stage) inregistrareButton.getScene().getWindow();
+        createAccountForm();
+
+    }
+
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
@@ -109,4 +122,21 @@ public class LoginController implements Initializable {
 
 
     }
+
+    public void createAccountForm() {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            Stage register_stage= new Stage();
+            Scene scene = new Scene(fxmlLoader.load(), 520, 515);
+            register_stage.initStyle(StageStyle.UNDECORATED);
+            register_stage.setScene(scene);
+            register_stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
 }
