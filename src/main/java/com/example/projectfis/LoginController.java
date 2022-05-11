@@ -108,9 +108,9 @@ public class LoginController implements Initializable {
             ResultSet queryResult = statement.executeQuery(verifyLogin);
             while(queryResult.next()) {
                 if(queryResult.getInt(1) == 1) {
-                    loginMessage.setText("Congrats");
+                    loginMessage.setText("Felicitari!");
                 } else {
-                    loginMessage.setText("Invalid Login");
+                    loginMessage.setText("Datele nu corespund!");
                 }
             }
 
@@ -128,9 +128,10 @@ public class LoginController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
             Stage register_stage= new Stage();
-            Scene scene = new Scene(fxmlLoader.load(), 520, 515);
+            Scene scene = new Scene(fxmlLoader.load(), 520, 562);
             register_stage.initStyle(StageStyle.UNDECORATED);
             register_stage.setScene(scene);
+            register_stage.setTitle("Inregistrare");
             register_stage.show();
 
         } catch(Exception e) {
