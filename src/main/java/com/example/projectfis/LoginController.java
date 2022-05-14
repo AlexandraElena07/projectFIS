@@ -46,6 +46,24 @@ public class LoginController implements Initializable {
     @FXML
     private Button inregistrareButton;
 
+    @FXML
+    private Button donatiiButton;
+
+    @FXML
+    private Button bileteButton;
+
+    @FXML
+    private Button animaleButton;
+
+    @FXML
+    private Button evenimenteButton;
+
+    @FXML
+    private Button fotografiiButton;
+
+    @FXML
+    private ImageView paunImage;
+
 
 
 
@@ -66,6 +84,7 @@ public class LoginController implements Initializable {
         File giraffe2File= new File("ProiectFis/giraffe2.png");
         Image giraffe2Image = new Image(giraffe2File.toURI().toString());
         giraffe2ImageView.setImage(giraffe2Image);
+
     }
     public void login(ActionEvent event)
     {
@@ -85,6 +104,7 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
 
     public void inregistrareButtonOnAction(ActionEvent event) {
         //Stage stage = (Stage) inregistrareButton.getScene().getWindow();
@@ -108,7 +128,15 @@ public class LoginController implements Initializable {
             ResultSet queryResult = statement.executeQuery(verifyLogin);
             while(queryResult.next()) {
                 if(queryResult.getInt(1) == 1) {
-                    loginMessage.setText("Felicitari!");
+
+                    loginMessage.setText("Congrats");
+                    FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menu.fxml"));
+                    Stage menu_stage= new Stage();
+                    Scene scene1 = new Scene(fxmlLoader1.load(), 871,  343);
+                    menu_stage.initStyle(StageStyle.UNDECORATED);
+                    menu_stage.setScene(scene1);
+                    menu_stage.setTitle("Menu");
+                    menu_stage.show();
                 } else {
                     loginMessage.setText("Datele nu corespund!");
                 }
