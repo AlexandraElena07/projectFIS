@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="474.0" prefWidth="726.0" style="-fx-background-color: #f76300;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.EventsController">
+    <children>
+        <TableView fx:id="events" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="734.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="96.79998779296875" text="Nr. eveniment" />
+                <TableColumn fx:id="titlu" prefWidth="296.00006103515625" text="Titlul evenimentului" />
+                <TableColumn fx:id="descriere" prefWidth="339.9999755859375" text="Descrierea eveimentului" />
+            </columns>
+        </TableView>
+      <Button fx:id="back" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="660.0" layoutY="434.0" mnemonicParsing="false" text="Votare" />
+    </children>
+</AnchorPane>
