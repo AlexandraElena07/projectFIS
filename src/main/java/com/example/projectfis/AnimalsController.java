@@ -1,14 +1,24 @@
 package com.example.projectfis;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AnimalsController implements Initializable {
     @FXML
@@ -18,84 +28,69 @@ public class AnimalsController implements Initializable {
     private Label titlu;
 
     @FXML
-    private Label alpaca;
-    @FXML
     private ImageView pozaAlpaca;
-    @FXML
-    private Label textAlpaca;
 
-    @FXML
-    private Label broasca;
     @FXML
     private ImageView pozaBroasca;
-    @FXML
-    private Label textBroasca;
 
-    @FXML
-    private Label cal;
     @FXML
     private ImageView pozaCal;
-    @FXML
-    private Label textCal;
 
-    @FXML
-    private Label cerb;
     @FXML
     private ImageView pozaCerb;
-    @FXML
-    private Label textCerb;
 
-    @FXML
-    private Label girafa;
     @FXML
     private ImageView pozaGirafa;
-    @FXML
-    private Label textGirafa;
 
-    @FXML
-    private Label leu;
     @FXML
     private ImageView pozaLeu;
-    @FXML
-    private Label textLeu;
 
-    @FXML
-    private Label paun;
     @FXML
     private ImageView pozaPaun;
-    @FXML
-    private Label textPaun;
 
-    @FXML
-    private Label ponei;
     @FXML
     private ImageView pozaPonei;
-    @FXML
-    private Label textPonei;
 
-    @FXML
-    private Label tigru;
     @FXML
     private ImageView pozaTigru;
-    @FXML
-    private Label textTigru;
 
-    @FXML
-    private Label urs;
     @FXML
     private ImageView pozaUrs;
-    @FXML
-    private Label textUrs;
 
-    @FXML
-    private Label vulpe;
     @FXML
     private ImageView pozaVulpe;
+
     @FXML
-    private Label textVulpe;
+    private ImageView pozaFlamingo;
+
+    @FXML
+    private TableView <Animals> animals;
+
+    @FXML
+    private TableColumn<Animals, String> id;
+
+    @FXML
+    private TableColumn<Animals, String> nume;
+
+    @FXML
+    private TableColumn<Animals, String> descriere;
+
+    @FXML
+    private TableColumn<Animals, String> regiune;
+
+    @FXML
+    private TableColumn<Animals, String> habitat;
+
+    @FXML
+    private TableColumn<Animals, String> tip;
+
+    @FXML
+    private TableColumn<Animals, String> conservare;
+
+    ObservableList<Animals> oblist = FXCollections.observableArrayList();
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL location, ResourceBundle resources) {
         File alpacaFile = new File("imageAnimale/alpaca.jpg");
         Image alpacaImage = new Image(alpacaFile.toURI().toString());
         pozaAlpaca.setImage(alpacaImage);
@@ -140,5 +135,33 @@ public class AnimalsController implements Initializable {
         Image vulpeImage = new Image(vulpeFile.toURI().toString());
         pozaVulpe.setImage(vulpeImage);
 
+        File flamingoFile = new File("imageAnimale/flamingo.jpg");
+        Image flamingoImage = new Image(flamingoFile.toURI().toString());
+        pozaFlamingo.setImage(flamingoImage);
+
+        try {
+            DataBaseConnection connectNow= new DataBaseConnection();
+            Connection connectDB= connectNow.getConnection();
+
+            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * FROM animale");
+            while(rs.next()) {
+                oblist.add(new Animals(rs.getString("id"), rs.getString("Nume"), rs.getString("Descriere"), rs.getString("Regiune"), rs.getString("Habitat"), rs.getString("Tip"), rs.getString("Conservare")));
+            }
+        } catch (SQLException ex){
+            Logger.getLogger(AnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nume.setCellValueFactory(new PropertyValueFactory<>("Nume"));
+        descriere.setCellValueFactory(new PropertyValueFactory<>("Descriere"));
+        regiune.setCellValueFactory(new PropertyValueFactory<>("Regiune"));
+        habitat.setCellValueFactory(new PropertyValueFactory<>("Habitat"));
+        tip.setCellValueFactory(new PropertyValueFactory<>("Tip"));
+        conservare.setCellValueFactory(new PropertyValueFactory<>("Conservare"));
+
+
+        animals.setItems(oblist);
     }
+
 }
+
