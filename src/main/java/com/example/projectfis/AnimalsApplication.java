@@ -12,7 +12,7 @@ public class AnimalsApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AnimalsApplication.class.getResource("animals.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 835 , 750);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.setTitle("Lista Animale");
