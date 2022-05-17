@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.ManagerAnimalsController">
+    <right>
+        <TableView fx:id="animals" prefHeight="539.0" prefWidth="671.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="26.399993896484375" text="Id" />
+                <TableColumn fx:id="nume" prefWidth="61.60003662109375" text="Nume" />
+                <TableColumn fx:id="descriere" prefWidth="249.60000610351562" text="Descriere" />
+                <TableColumn fx:id="regiune" prefWidth="80.79998779296875" text="Regiune" />
+                <TableColumn fx:id="habitat" prefWidth="101.60003662109375" text="Habitat" />
+                <TableColumn fx:id="tip" prefWidth="74.39990234375" text="Tip" />
+                <TableColumn fx:id="conservare" prefWidth="74.40007324218755" text="Conservare" />
+            </columns>
+        </TableView>
+    </right>
+    <left>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="252.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="pozaAlpaca" fitHeight="90.0" fitWidth="127.0" layoutX="126.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/alpaca.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaBroasca" fitHeight="90.0" fitWidth="127.0" layoutX="126.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/broasca.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaCal" fitHeight="90.0" fitWidth="127.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/cal.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaCerb" fitHeight="90.0" fitWidth="127.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/cerb.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaGirafa" fitHeight="90.0" fitWidth="127.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/girafa.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaLeu" fitHeight="170.0" fitWidth="127.0" layoutX="127.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/leu.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaPaun" fitHeight="90.0" fitWidth="126.0" layoutX="127.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/paun.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaPonei" fitHeight="94.0" fitWidth="129.0" layoutX="125.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/ponei.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaTigru" fitHeight="90.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/tigru.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaUrs" fitHeight="170.0" fitWidth="127.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/urs.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaVulpe" fitHeight="170.0" fitWidth="127.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/vulpe.jpg" />
+                    </image>
+                </ImageView>
+                <Button layoutX="6.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
+                <ImageView fx:id="pozaFlamingo" fitHeight="92.0" fitWidth="128.0" layoutX="126.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/flamingo.jpg" />
+                    </image>
+                </ImageView>
+            <Button fx:id="adauga" layoutX="102.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adauga" textFill="WHITE" />
+            <Button layoutX="189.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
