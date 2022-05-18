@@ -15,6 +15,8 @@ import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -86,8 +88,7 @@ public class LoginController implements Initializable {
         giraffe2ImageView.setImage(giraffe2Image);
 
     }
-    public void login(ActionEvent event)
-    {
+    public void login(ActionEvent event) throws NoSuchAlgorithmException {
 
         if(enterUsernameField.getText().isBlank()==false && enterPasswordField.getText().isBlank()==false)
         {
@@ -117,12 +118,24 @@ public class LoginController implements Initializable {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    public void validateLogin() {
+    public void validateLogin() throws NoSuchAlgorithmException {
         DataBaseConnection connectNow= new DataBaseConnection();
-
         Connection connectDB= connectNow.getConnection();
 
-        String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + enterPasswordField.getText() + "'";
+        String salt = enterUsernameField.getText();
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+        md.update(salt.getBytes());
+        byte[] bytes = md.digest(enterPasswordField.getText().getBytes());
+        StringBuilder sb= new StringBuilder();
+        for(int i=0; i<bytes.length; i++)
+        {
+            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100,16).substring(1));
+        }
+
+        String hasedPassword = sb.toString();
+
+        String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + hasedPassword + "'";
         try {
             Statement statement= connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
