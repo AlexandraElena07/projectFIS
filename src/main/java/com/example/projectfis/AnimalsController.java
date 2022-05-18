@@ -67,7 +67,7 @@ public class AnimalsController implements Initializable {
     private TableView <Animals> animals;
 
     @FXML
-    private TableColumn<Animals, String> id;
+    private TableColumn<Animals, Integer> id;
 
     @FXML
     private TableColumn<Animals, String> nume;
@@ -145,7 +145,7 @@ public class AnimalsController implements Initializable {
 
             ResultSet rs = connectDB.createStatement().executeQuery("SELECT * FROM animale");
             while(rs.next()) {
-                oblist.add(new Animals(rs.getString("id"), rs.getString("Nume"), rs.getString("Descriere"), rs.getString("Regiune"), rs.getString("Habitat"), rs.getString("Tip"), rs.getString("Conservare")));
+                oblist.add(new Animals(rs.getInt("id"), rs.getString("Nume"), rs.getString("Descriere"), rs.getString("Regiune"), rs.getString("Habitat"), rs.getString("Tip"), rs.getString("Conservare")));
             }
         } catch (SQLException ex){
             Logger.getLogger(AnimalsController.class.getName()).log(Level.SEVERE,null,ex);
