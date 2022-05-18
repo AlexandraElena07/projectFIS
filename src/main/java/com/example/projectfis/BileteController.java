@@ -44,46 +44,87 @@ public class BileteController implements Initializable {
         leu.setImage(leuImage);
     }
 
+
     public void achizitionareBileteAdulti(ActionEvent event) {
         if (card.getText().isBlank() == false) {
             DataBaseConnection connectNow = new DataBaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String verifyPayment = "UPDATE card_bancar SET Suma = (Suma - 10) WHERE Numarul = '" + card.getText() + "'";
 
+            String suma = "SELECT Suma FROM card_bancar WHERE Numarul = '" + card.getText() + "'";
+            Integer sumas = null;
             try {
-                Statement statement= connectDB.createStatement();
-                statement.executeUpdate(verifyPayment);
-                labelBilete.setText("Congrats!");
+                Statement statement = connectDB.createStatement();
+                ResultSet suma_s = statement.executeQuery(suma);
+                while (suma_s.next()) {
+                    sumas = suma_s.getInt("Suma");
 
-            }catch(Exception e) {
+
+                }
+
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
 
+            if (sumas - 10 > 0) {
+
+                String verifyPayment = "UPDATE card_bancar SET Suma = (Suma - 10) WHERE Numarul = '" + card.getText() + "'";
+
+                try {
+                    Statement statement = connectDB.createStatement();
+                    statement.executeUpdate(verifyPayment);
+                    labelBilete.setText("Congrats!");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    e.getCause();
+                }
+
+
+            } else
+                labelBilete.setText("Fonduri insuficiente :( ");
+
 
         }
-
-
     }
 
     public void achizitionareBileteCopl(ActionEvent event) {
-        if (card.getText().isBlank() == false) {
-            DataBaseConnection connectNow = new DataBaseConnection();
-            Connection connectDB = connectNow.getConnection();
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String suma = "SELECT Suma FROM card_bancar WHERE Numarul = '" + card.getText() + "'";
+        Integer sumas = null;
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet suma_s = statement.executeQuery(suma);
+            while (suma_s.next()) {
+                sumas = suma_s.getInt("Suma");
+
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+        if (sumas - 5 > 0) {
+
             String verifyPayment = "UPDATE card_bancar SET Suma = (Suma - 5) WHERE Numarul = '" + card.getText() + "'";
 
             try {
-                Statement statement= connectDB.createStatement();
+                Statement statement = connectDB.createStatement();
                 statement.executeUpdate(verifyPayment);
                 labelBilete.setText("Congrats!");
 
-            }catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
 
 
-        }
+        } else
+            labelBilete.setText("Fonduri insuficiente :( ");
 
 
     }
