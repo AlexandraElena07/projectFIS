@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane prefHeight="438.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AddController">
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="438.0" prefWidth="425.0">
@@ -83,16 +82,17 @@
                   <Font name="Algerian" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="salvare" layoutX="21.0" layoutY="373.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
+            <Button fx:id="salvare" layoutX="21.0" layoutY="373.0" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="stergere" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Stergere" textFill="WHITE">
+            <Button fx:id="inchidere" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Inchidere" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="24.0" />
                </font>
             </Button>
+            <Label fx:id="saveLabel" alignment="CENTER" layoutX="80.0" layoutY="336.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
          </children>
       </AnchorPane>
    </children>
