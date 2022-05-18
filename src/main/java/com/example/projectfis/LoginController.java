@@ -15,6 +15,8 @@ import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -46,6 +48,24 @@ public class LoginController implements Initializable {
     @FXML
     private Button inregistrareButton;
 
+    @FXML
+    private Button donatiiButton;
+
+    @FXML
+    private Button bileteButton;
+
+    @FXML
+    private Button animaleButton;
+
+    @FXML
+    private Button evenimenteButton;
+
+    @FXML
+    private Button fotografiiButton;
+
+    @FXML
+    private ImageView paunImage;
+
 
 
 
@@ -66,9 +86,9 @@ public class LoginController implements Initializable {
         File giraffe2File= new File("ProiectFis/giraffe2.png");
         Image giraffe2Image = new Image(giraffe2File.toURI().toString());
         giraffe2ImageView.setImage(giraffe2Image);
+
     }
-    public void login(ActionEvent event)
-    {
+    public void login(ActionEvent event) throws NoSuchAlgorithmException {
 
         if(enterUsernameField.getText().isBlank()==false && enterPasswordField.getText().isBlank()==false)
         {
@@ -86,6 +106,7 @@ public class LoginController implements Initializable {
         stage.close();
     }
 
+
     public void inregistrareButtonOnAction(ActionEvent event) {
         //Stage stage = (Stage) inregistrareButton.getScene().getWindow();
         createAccountForm();
@@ -97,18 +118,38 @@ public class LoginController implements Initializable {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    public void validateLogin() {
+    public void validateLogin() throws NoSuchAlgorithmException {
         DataBaseConnection connectNow= new DataBaseConnection();
-
         Connection connectDB= connectNow.getConnection();
 
-        String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + enterPasswordField.getText() + "'";
+        String salt = enterUsernameField.getText();
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+        md.update(salt.getBytes());
+        byte[] bytes = md.digest(enterPasswordField.getText().getBytes());
+        StringBuilder sb= new StringBuilder();
+        for(int i=0; i<bytes.length; i++)
+        {
+            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100,16).substring(1));
+        }
+
+        String hasedPassword = sb.toString();
+
+        String verifyLogin= "SELECT count(1) FROM user_account WHERE username = '" + enterUsernameField.getText() + "'AND password = '" + hasedPassword + "'";
         try {
             Statement statement= connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
             while(queryResult.next()) {
                 if(queryResult.getInt(1) == 1) {
-                    loginMessage.setText("Felicitari!");
+
+                    loginMessage.setText("Congrats");
+                    FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menu.fxml"));
+                    Stage menu_stage= new Stage();
+                    Scene scene1 = new Scene(fxmlLoader1.load(), 871,  343);
+                    menu_stage.initStyle(StageStyle.UNDECORATED);
+                    menu_stage.setScene(scene1);
+                    menu_stage.setTitle("Menu");
+                    menu_stage.show();
                 } else {
                     loginMessage.setText("Datele nu corespund!");
                 }
