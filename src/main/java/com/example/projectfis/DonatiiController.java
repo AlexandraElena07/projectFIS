@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -49,21 +50,61 @@ public class DonatiiController implements  Initializable{
             DataBaseConnection connectNow = new DataBaseConnection();
             Connection connectDB = connectNow.getConnection();
             Integer suma_donata = Integer.parseInt(suma.getText());
-            String verifyPayment = "UPDATE card_bancar SET Suma = (Suma - '" + suma_donata + "') WHERE Numarul = '" + numarcard.getText() + "'";
-
+            String suma = "SELECT Suma FROM card_bancar WHERE Numarul = '" + numarcard.getText() + "'";
+            Integer sumas = null;
             try {
-                Statement statement= connectDB.createStatement();
-                statement.executeUpdate(verifyPayment);
-                labeldonatii.setText("Multumim pentru donatie!");
+                Statement statement = connectDB.createStatement();
+                ResultSet suma_s = statement.executeQuery(suma);
+                while (suma_s.next()) {
+                    sumas = suma_s.getInt("Suma");
 
-            }catch(Exception e) {
+
+                }
+
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
 
+            if (sumas - suma_donata > 0) {
+                String verifyPayment = "UPDATE card_bancar SET Suma = (Suma - '" + suma_donata + "') WHERE Numarul = '" + numarcard.getText() + "'";
 
+
+                try {
+                    Statement statement = connectDB.createStatement();
+                    statement.executeUpdate(verifyPayment);
+                    labeldonatii.setText("Multumim pentru donatie!");
+                    loadData();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    e.getCause();
+                }
+
+
+            } else
+                labeldonatii.setText("Fonduri insuficiente :( ");
         }
 
 
+    }
+
+    void loadData()
+    {
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        Integer suma_donata = Integer.parseInt(suma.getText());
+
+        String sumad = "INSERT INTO donatii (nume, sumadonata) VALUES ('" + numedonator.getText() + "', '" + suma_donata + "')";
+
+        try {
+            PreparedStatement preparedStmt = connectDB.prepareStatement(sumad);
+            preparedStmt.execute();
+
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }
