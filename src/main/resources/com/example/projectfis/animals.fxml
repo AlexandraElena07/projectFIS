@@ -1,143 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.BorderPane?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2750.0" prefWidth="835.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AnimalsController">
-    <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2740.0" prefWidth="835.0">
+
+<BorderPane prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AnimalsController">
+    <right>
+        <TableView fx:id="animals" prefHeight="539.0" prefWidth="671.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="26.399993896484375" text="Id" />
+                <TableColumn fx:id="nume" prefWidth="61.60003662109375" text="Nume" />
+                <TableColumn fx:id="descriere" prefWidth="249.60000610351562" text="Descriere" />
+                <TableColumn fx:id="regiune" prefWidth="80.79998779296875" text="Regiune" />
+                <TableColumn fx:id="habitat" prefWidth="101.60003662109375" text="Habitat" />
+                <TableColumn fx:id="tip" prefWidth="74.39990234375" text="Tip" />
+                <TableColumn fx:id="conservare" prefWidth="74.40007324218755" text="Conservare" />
+            </columns>
+        </TableView>
+    </right>
+    <left>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="252.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="alpaca" layoutX="16.0" layoutY="141.0" prefHeight="40.0" prefWidth="235.0" text="ALPACA" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textAlpaca" layoutX="256.0" layoutY="181.0" prefHeight="170.0" prefWidth="540.0" text="          Alpaca, animal erbivor originar din Anzii Cordilieri, face parte din familia cămilei, fiind înrudită cu lama, guanaco-ul și vicunia din America de Sud, precum și cu cămilele bactriane și dromadere din Asia și Africa. Habitatul natural pentru alpaca este în platoul Anzilor, de preferință în apropierea zonelor umede. Alpaca este un animal erbivor, rumegător de talie mijlocie. La Zoo, hrana mamiferului este compusă dintr-o combinație de iarbă proaspătă și fân cu proteine scăzute. Avem o frumoasă familie de alpaca care, în anul 2017, s-a înmulțit cu puiuțul Anakin, al cărui nume a fost ales de prietenii Zoo. Mereu curioase și atente sunt o atracție pentru vizitatorii de toate vârstele ai Grădinii Zoologice." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="broasca" layoutX="563.0" layoutY="350.0" prefHeight="40.0" prefWidth="235.0" text="BROASCA ȚESTOASĂ DE APĂ" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textBroasca" layoutX="14.0" layoutY="385.0" prefHeight="170.0" prefWidth="540.0" text="          Broasca țestoasă de apă (Emys orbicularis) este o specie de țestoasă de apă dulce.Culoarea broaștei țestoase de apă variază, însă există, de obicei, o ușoară strălucire pe o culoare de fundal întunecată (adesea negru). Forma și culoarea carapacei se modifică odată cu vârsta. Trăiește în Europa de Sud și Europa Centrală, Asia de Vest și Africa de Nord. În perioada post-glacială timpurie, broasca țestoasă a avut o distribuție mult mai largă. A dispărut în Marea Britanie din cauza schimbărilor climatice. Țestoasele de apă au o dietă mixtă de plante și substanțe animale care pot crește eficiența procesului lor digestiv. La Zoo pot fi admirate 26 de exemplare din specia țestoasei de apă." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="cal" layoutX="15.0" layoutY="576.0" prefHeight="40.0" prefWidth="235.0" text="CAL" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textCal" layoutX="256.0" layoutY="618.0" prefHeight="170.0" prefWidth="540.0" text="          Calul urmare a domesticirii  este foarte larg răspândit. Populațiile de cai sălbatici au existat în nordul  Africii, în toată Europa, cu excepția celor mai nordice regiuni, dar și în țările scandinave, și, la est, în regiunea palearctică, cum ar fi China și Mongolia. Caii sunt adaptabili și ocupă o mare varietate de habitate urmare a  domesticirii. Habitatele preferate sunt pășunile temperate, stepele și savanele, dar ocupă și semi-deșerturi, zone de mlaștini și păduri. Caii domesticiți sunt adesea hrăniți cu diferite cantități de boabe, inclusiv ovăz, orz, porumb, grâu, in, soia, lucernă, trifoi, fân și iarbă. În plus față de această dietă, pot fi furnizate și suplimente de vitamine și minerale. La Zoo puteți admira un exemplar superb de cal." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="cerb" layoutX="563.0" layoutY="819.0" prefHeight="40.0" prefWidth="235.0" text="CERB LOPĂTAR" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textCerb" layoutX="18.0" layoutY="857.0" prefHeight="170.0" prefWidth="540.0" text="          Cerbii sunt asemănători ca înfățișare antilopelor, dar se deosebesc de acestea prin coarnele lor solide, de obicei ramificate și care se regenerează în fiecare an. Cerbul lopătar  trăiește, în principal, în zonele împădurite. El preferă păduri de foioase vechi, de diferite densități, intercalate cu zone de iarbă, dar se întâlnesc și în păduri mixte, zone cu vegetație subalpină, pășuni, savană. Cerbul lopătar consumă o varietate de vegetație, de obicei, ierburi. Alte elemente din dieta lor pot include, arbusti pitici, frunze, muguri, lăstari și coajă. Hrana este adaptabilă și depinde de sezon și disponibilitate. Cerbul lopătar în România este protejat prin lege. Pe Lista Roşie IUCN apare cu risc scăzut. La Zoo puteți admira 4 exemplare de Cerb lopătar." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="girafa" layoutX="16.0" layoutY="1042.0" prefHeight="40.0" prefWidth="235.0" text="GIRAFA" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textGirafa" layoutX="265.0" layoutY="1075.0" prefHeight="170.0" prefWidth="540.0" text="          Girafa este un mamifer si este cea mai înaltă din toate speciile de animale. Masculii pot avea 4,8–5,5 m înălțime și o greutate de 900 kg. Numele ei provine din arabă și înseamnă cea mai înaltă dintre toate. Trăiește în savanele din Africa. Limba de culoare gri, foarte lungă (circa 41 de cm), îi permite să-și curețe urechile. Are două coarne și o creastă osoasă datorită dezvoltării excesive a oaselor frontale și nazale. Regimul alimentar al girafei este în acord cu fizicul; mănâncă frunzele arborilor folosind limba. Cele care trăiesc în sudul Africii preferă ramurile și frunzele care au spini. Girafa la fel ca vaca, este un animal rumegător, are 4 stomacuri și digestia este asemănătoare celorlalte rumegătoare (digestia are nevoie de mult timp)." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="leu" layoutX="575.0" layoutY="1257.0" prefHeight="40.0" prefWidth="235.0" text="LEU" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label fx:id="textLeu" layoutX="14.0" layoutY="1295.0" prefHeight="170.0" prefWidth="540.0" text="          Leii diferă de ceilalți membri ai genului mare de feline, tigri, pantere, leoparzi și jaguari. Masculii adulți de leu sunt mult mai mari decât femelele și de obicei au o coamă impresionantă formată din păr în jurul gâtului. Leul african trăiește în câmpie sau savană, cu o bază de pradă mare (cea mai mare parte ungulate) și care au o acoperire teritorială suficientă, disponibilă. Leul asiatic trăiește în pădurile de tec – pădurea Gir din India. Leul este carnivor, iar dieta sa constă în: antilope gnu, girafe, bivoli, zebre, gazele, rozătoare, iepuri, păsări, reptile. Uneori acesta mai vânează și pui de elefanți, rinoceri sau hipopotami. Numărul exemplarelor de lei a suferit o scădere de aproximativ 43% în ultimii 21 ani (aproximativ 3 generații de lei, 1993 – 2014)." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="paun" layoutX="18.0" layoutY="1498.0" prefHeight="40.0" prefWidth="235.0" text="PĂUN" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="272.0" layoutY="1536.0" prefHeight="170.0" prefWidth="540.0" text="          Păunul sau Pavo cristatus, o pasăre mare și colorată, este o specie de păun originar din sudul Asiei, dar introdusă în multe alte părți ale lumii.Păunul este una dintre cele mai spectaculoase păsări de vânat. Păunul este o pasăre originară din sudul Asia. Trăiește, în special, sub o altitudine de 1.800 metri și, în cazuri rare, a fost văzută la aproximativ 2.000 de metri. Păunul este o pasăre omnivoră și mănâncă semințe, insecte, fructe, mamifere mici și reptile mici. Păunii se hrănesc cu șerpi mici, și păstrează distanța față de reptilele mai mari. Păunul  se regăsește  pe scară largă, în sălbăticie, în sudul Asiei. Este protejat în multe țări, atât cultural, cât și prin lege, de exemplu, în India. La Zoo puteți admira 10 exemplare de Păuni." textFill="#f76300" wrapText="true" />
-                <Label layoutX="575.0" layoutY="1727.0" prefHeight="40.0" prefWidth="235.0" text="PONEI" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="18.0" layoutY="1767.0" prefHeight="170.0" prefWidth="540.0" text="          Un ponei este un cal mic (Equus ferus caballus). Există mai multe rase diferite. În comparație cu calul, adesea, picioarele poneiului sunt mai scurte, abdomenul lui mai voluminos, gâtul mai gros, capul mai scurt cu fruntea mai largă și părul lung. Acești cai mai mici au fost domesticiți și crescuți în diferite scopuri în toată emisfera nordică. Istoric, poneii au fost folosiți pentru transportul de călători și de mărfuri, pentru călătorii de agrement. Poneii au un sistem digestiv scurt și un stomac de mărimea unei mingi de rugby. Ei nu pot consuma mult la o masă, de aceea este bine ca ei să primească 3-4 mese pe zi. Unele rase de cai nu sunt definite ca ponei, chiar și atunci când animalele măsoară sub dimenisunea normală a cailor. La Zoo avem în colecție 9 exemplare superbe de ponei, care vă așteaptă să îi vizitați!" textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label layoutX="18.0" layoutY="1969.0" prefHeight="40.0" prefWidth="235.0" text="TIGRU" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="265.0" layoutY="2009.0" prefHeight="170.0" prefWidth="540.0" text="          Tigrul este cel mai mare membru al familiei felinelor. Mărimea, culoarea blănii și însemnele specifice variază în funcție de specie. Tigrii locuiesc într-o mare varietate de habitate, determinate de răspândirea lor într-o gamă largă de condiții ecologice. Se știe că aceștia se întâlnesc în pădurea tropicală, pădurile de mangovre, pădurile uscate, pădurile de stejar și de mesteacan, junglele cu iarbă înaltă și mlaștinile de mangrove. Tigrii preferă să vâneze noaptea, când prada formată din ungulate este mai activă.  Subspeciile de tigru care mai trăiesc astăzi sunt toate foarte amenințate din cauza vânătorii umane și a incendiilor asupra habitatului lor forestier. Zoo deține o colecție importantă de tigrii siberieni, 5 femele și trei masculi." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label layoutX="575.0" layoutY="2201.0" prefHeight="40.0" prefWidth="235.0" text="URS BRUN" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="14.0" layoutY="2239.0" prefHeight="170.0" prefWidth="540.0" text="          Ursul brun are blana deasă cu peri moi, mai lungi pe față, abdomen și mai scurt pe bot. Îl întâlnim în țara noastră în partea de nord, în Munții Rodnei și Maramureșului. Ursul brun mai este răspândit de asemenea, în America de Nord (Alaska, Canada), cât și în Rusia, unde există cea mai mare populație (120.000). Ursul brun în tinerețe se hrănește cu ghida, jir, mere pădurețe, zmeură, afine, miere de albine, iarbă fragedă, ovăz porumb necopt, diferite rădăcini. România se bucură de cea mai însemnată populație de urși din Europa, care numără circa 6300 de exemplare. La Zoo puteți admira un exemplar minunat de urs brun." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label layoutX="15.0" layoutY="2446.0" prefHeight="40.0" prefWidth="235.0" text="VULPE" textFill="#f76300">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="256.0" layoutY="2486.0" prefHeight="170.0" prefWidth="540.0" text="          Vulpea este un mamifer omnivor, de dimensiune mică spre medie, încadrat sistematic în familia Canidae, alături de lup, câine, șacal, enot ș.a. Vulpea este mai mică decât câinele obișnuit și evident mai mică decât lupul. Are între 7 și 10 kg, rar mai mult. Corpul are sub 1 m lungime, iar coada stufoasă circa 30-40 cm. Vulpea mănâncă cele mai mici mamifere: șoareci de câmp, popândăi, castori, lemingi, veverițe, iepuri etc. Considerate în trecut “devoratoare de găini”, vulpile au fost vânate cu cruzime ani la rând." textAlignment="JUSTIFY" textFill="#f76300" wrapText="true" />
-                <Label fx:id="titlu" alignment="CENTER" layoutX="241.0" layoutY="31.0" prefHeight="82.0" prefWidth="375.0" text="GRĂDINA ZOO" textAlignment="CENTER" textFill="#f76300">
-                    <font>
-                        <Font size="36.0" />
-                    </font>
-                </Label>
-                <Button layoutX="14.0" layoutY="2698.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="65.0" text="Înapoi" textFill="#f76300" />
-                <ImageView fx:id="pozaAlpaca" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaAlpaca" fitHeight="90.0" fitWidth="127.0" layoutX="126.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/alpaca.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaBroasca" fitHeight="170.0" fitWidth="235.0" layoutX="575.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaBroasca" fitHeight="90.0" fitWidth="127.0" layoutX="126.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/broasca.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaCal" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaCal" fitHeight="90.0" fitWidth="127.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/cal.jpg" />
-                    </image></ImageView>
-                <ImageView fx:id="pozaCerb" fitHeight="170.0" fitWidth="235.0" layoutX="575.0" layoutY="857.0" pickOnBounds="true" preserveRatio="true">
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pozaCerb" fitHeight="90.0" fitWidth="127.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/cerb.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaGirafa" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="1082.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaGirafa" fitHeight="90.0" fitWidth="127.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/girafa.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaLeu" fitHeight="170.0" fitWidth="235.0" layoutX="575.0" layoutY="1295.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaLeu" fitHeight="170.0" fitWidth="127.0" layoutX="127.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/leu.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaPaun" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="1538.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaPaun" fitHeight="90.0" fitWidth="126.0" layoutX="127.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/paun.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaPonei" fitHeight="170.0" fitWidth="235.0" layoutX="575.0" layoutY="1769.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaPonei" fitHeight="94.0" fitWidth="129.0" layoutX="125.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/ponei.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaTigru" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="2011.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaTigru" fitHeight="90.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/tigru.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaUrs" fitHeight="170.0" fitWidth="235.0" layoutX="575.0" layoutY="2241.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaUrs" fitHeight="170.0" fitWidth="127.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/urs.jpg" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pozaVulpe" fitHeight="170.0" fitWidth="235.0" layoutX="14.0" layoutY="2492.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaVulpe" fitHeight="170.0" fitWidth="127.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/vulpe.jpg" />
                     </image>
                 </ImageView>
-            </children></AnchorPane>
-    </content>
-</ScrollPane>
+                <Button layoutX="6.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
+                <ImageView fx:id="pozaFlamingo" fitHeight="92.0" fitWidth="128.0" layoutX="126.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../imageAnimale/flamingo.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>

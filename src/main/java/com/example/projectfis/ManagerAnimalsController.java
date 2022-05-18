@@ -2,27 +2,41 @@ package com.example.projectfis;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.w3c.dom.events.MouseEvent;
+
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class AnimalsController implements Initializable {
+public class ManagerAnimalsController implements Initializable {
     @FXML
     private Button back;
+
+
+    @FXML
+    private Button stergere;
 
     @FXML
     private Label titlu;
@@ -64,7 +78,7 @@ public class AnimalsController implements Initializable {
     private ImageView pozaFlamingo;
 
     @FXML
-    private TableView <Animals> animals;
+    private TableView<Animals> animals;
 
     @FXML
     private TableColumn<Animals, String> id;
@@ -87,10 +101,15 @@ public class AnimalsController implements Initializable {
     @FXML
     private TableColumn<Animals, String> conservare;
 
+    String query = null;
+
+    ResultSet resultSet = null;
+
+
     ObservableList<Animals> oblist = FXCollections.observableArrayList();
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize (URL url, ResourceBundle rs) {
         File alpacaFile = new File("imageAnimale/alpaca.jpg");
         Image alpacaImage = new Image(alpacaFile.toURI().toString());
         pozaAlpaca.setImage(alpacaImage);
@@ -139,17 +158,66 @@ public class AnimalsController implements Initializable {
         Image flamingoImage = new Image(flamingoFile.toURI().toString());
         pozaFlamingo.setImage(flamingoImage);
 
+        loadDate();
+    }
+
+    @FXML
+    public void close(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void getAddView(ActionEvent event) {
+      try {
+
+          FXMLLoader fxmlLoader = new FXMLLoader(AddController.class.getResource("addAnimals.fxml"));
+          Stage stage= new Stage();
+          Scene scene1 = new Scene(fxmlLoader.load());
+          stage.initStyle(StageStyle.UNDECORATED);
+          stage.setScene(scene1);
+          stage.setTitle("Adaugare");
+          stage.show();
+      } catch(IOException ex) {
+          Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+      }
+    }
+
+    @FXML
+    public void refteshTable(ActionEvent event) {
         try {
+            oblist.clear();
+
             DataBaseConnection connectNow= new DataBaseConnection();
             Connection connectDB= connectNow.getConnection();
 
-            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * FROM animale");
-            while(rs.next()) {
-                oblist.add(new Animals(rs.getString("id"), rs.getString("Nume"), rs.getString("Descriere"), rs.getString("Regiune"), rs.getString("Habitat"), rs.getString("Tip"), rs.getString("Conservare")));
+            ResultSet result = connectDB.createStatement().executeQuery("SELECT * FROM animale");
+
+            while(result.next()) {
+                oblist.add(new Animals(
+                        result.getString("id"),
+                        result.getString("Nume"),
+                        result.getString("Descriere"),
+                        result.getString("Regiune"),
+                        result.getString("Habitat"),
+                        result.getString("Tip"),
+                        result.getString("Conservare")));
+                        animals.setItems(oblist);
             }
-        } catch (SQLException ex){
-            Logger.getLogger(AnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        } catch(SQLException ex) {
+            Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+
         }
+
+    }
+
+    @FXML
+    public void print(MouseEvent event) {
+
+    }
+
+    private void loadDate() {
+        DataBaseConnection connectNow= new DataBaseConnection();
+        Connection connectDB= connectNow.getConnection();
 
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nume.setCellValueFactory(new PropertyValueFactory<>("Nume"));
@@ -158,10 +226,5 @@ public class AnimalsController implements Initializable {
         habitat.setCellValueFactory(new PropertyValueFactory<>("Habitat"));
         tip.setCellValueFactory(new PropertyValueFactory<>("Tip"));
         conservare.setCellValueFactory(new PropertyValueFactory<>("Conservare"));
-
-
-        animals.setItems(oblist);
     }
-
 }
-

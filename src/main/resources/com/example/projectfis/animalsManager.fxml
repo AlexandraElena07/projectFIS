@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AnimalsController">
+<BorderPane prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.ManagerAnimalsController">
     <right>
         <TableView fx:id="animals" prefHeight="539.0" prefWidth="671.0" BorderPane.alignment="CENTER">
             <columns>
@@ -87,6 +86,8 @@
                         <Image url="@../../../../../../imageAnimale/flamingo.jpg" />
                     </image>
                 </ImageView>
+            <Button fx:id="adauga" layoutX="102.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adauga" textFill="WHITE" />
+            <Button layoutX="189.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
             </children>
         </AnchorPane>
     </left>
