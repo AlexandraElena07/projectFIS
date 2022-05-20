@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -74,6 +75,7 @@ public class BileteController implements Initializable {
                     Statement statement = connectDB.createStatement();
                     statement.executeUpdate(verifyPayment);
                     labelBilete.setText("Congrats!");
+                    loadData("Adult");
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -116,6 +118,7 @@ public class BileteController implements Initializable {
                 Statement statement = connectDB.createStatement();
                 statement.executeUpdate(verifyPayment);
                 labelBilete.setText("Congrats!");
+                loadData("Copil");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -128,4 +131,23 @@ public class BileteController implements Initializable {
 
 
     }
+
+    void loadData(String persoana)
+    {
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String sumad = "INSERT INTO bilete (nume, tip) VALUES ('" + nume.getText()  + "', '" + persoana  + "')";
+
+        try {
+            PreparedStatement preparedStmt = connectDB.prepareStatement(sumad);
+            preparedStmt.execute();
+
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
 }
