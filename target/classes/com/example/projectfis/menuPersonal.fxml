@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="343.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.MenuPersonalController">
+    <children>
+        <ImageView fx:id="paunImage" fitHeight="350.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../ProiectFis/peacock.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="editareEventButton" layoutX="130.0" layoutY="139.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #123DC8;" text="Editare evenimente" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="votareButton" layoutX="167.0" layoutY="268.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #123DC8;" text="Votare fotografii" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="editareAnimalButton" layoutX="367.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #123DC8;" text="Editare animale" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="bileteButton" layoutX="596.0" layoutY="139.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #123DC8;" text="Vizualizare evenimente" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="donatiiButton" layoutX="558.0" layoutY="268.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #123DC8;" text="Vizualizare donatii" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>
