@@ -53,7 +53,7 @@ public class EventsController implements Initializable {
 
             ResultSet rs = connectDB.createStatement().executeQuery("SELECT * FROM events");
             while(rs.next()) {
-                oblist.add(new Events(rs.getString("id"), rs.getString("Titlu"), rs.getString("Descriere")));
+                oblist.add(new Events(rs.getInt("id"), rs.getString("Titlu"), rs.getString("Descriere")));
             }
         } catch (SQLException ex){
             Logger.getLogger(EventsController.class.getName()).log(Level.SEVERE,null,ex);
