@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.layout.Pane?>
 
 <BorderPane prefHeight="416.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.EventsController">
     <right>
-        <ScrollPane prefHeight="416.0" prefWidth="606.0" BorderPane.alignment="CENTER">
-            <content>
-                <TableView fx:id="events" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="781.0">
+        <Pane prefHeight="431.0" prefWidth="680.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="events" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="682.0">
                     <columns>
-                        <TableColumn fx:id="id" prefWidth="86.39996182918549" text="Nr. eveniment" />
-                        <TableColumn fx:id="titlu" prefWidth="327.20006561279297" text="Titlul evenimentului" />
-                        <TableColumn fx:id="descriere" prefWidth="366.3999938964844" text="Descrierea eveimentului" />
+                        <TableColumn fx:id="id" prefWidth="27.999985098838806" text="ID" />
+                        <TableColumn fx:id="titlu" prefWidth="312.0000057220459" text="Titlul evenimentului" />
+                        <TableColumn fx:id="descriere" prefWidth="340.3999938964844" text="Descrierea evenimentului" />
                     </columns>
                 </TableView>
-            </content>
-        </ScrollPane>
+            </children>
+        </Pane>
     </right>
     <left>
         <AnchorPane prefHeight="416.0" prefWidth="250.0" style="-fx-background-color: #f76300;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="pozaPonei" fitHeight="416.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pozaPonei" fitHeight="431.0" fitWidth="278.0" layoutX="-9.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../Evenimente/ponei.jpg" />
                     </image>
                 </ImageView>
-                <Button layoutX="8.0" layoutY="382.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
-                <Button layoutX="174.0" layoutY="382.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Votare" textFill="WHITE" />
+                <Button layoutX="8.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
+                <Button layoutX="168.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
             </children>
         </AnchorPane>
     </left>
