@@ -2,11 +2,11 @@ package com.example.projectfis;
 
 public class Events {
 
-    String id;
+    int id;
 
     String Titlu, Descriere;
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -18,7 +18,7 @@ public class Events {
         this.Descriere = Descriere;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -30,7 +30,7 @@ public class Events {
         return Descriere;
     }
 
-    public Events(String id, String Titlu, String Descriere) {
+    public Events(int id, String Titlu, String Descriere) {
         this.id = id;
         this.Titlu = Titlu;
         this.Descriere = Descriere;

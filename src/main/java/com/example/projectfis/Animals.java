@@ -2,9 +2,10 @@ package com.example.projectfis;
 
 public class Animals {
 
-    String id, Nume, Descriere, Regiune, Habitat, Tip, Conservare;
+    String  Nume, Descriere, Regiune, Habitat, Tip, Conservare;
+    int id;
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -32,7 +33,7 @@ public class Animals {
         this.Conservare = Conservare;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -60,7 +61,7 @@ public class Animals {
         return Conservare;
     }
 
-    public Animals(String id, String Nume, String Descriere, String Regiune, String Habitat, String Tip, String Conservare) {
+    public Animals(int id, String Nume, String Descriere, String Regiune, String Habitat, String Tip, String Conservare) {
         this.id = id;
         this.Nume = Nume;
         this.Descriere = Descriere;

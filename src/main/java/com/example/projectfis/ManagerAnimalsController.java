@@ -34,9 +34,11 @@ public class ManagerAnimalsController implements Initializable {
     @FXML
     private Button back;
 
-
     @FXML
     private Button stergere;
+
+    @FXML
+    private Button editare;
 
     @FXML
     private Label titlu;
@@ -168,18 +170,50 @@ public class ManagerAnimalsController implements Initializable {
 
     @FXML
     public void getAddView(ActionEvent event) {
-      try {
+        try {
 
-          FXMLLoader fxmlLoader = new FXMLLoader(AddController.class.getResource("addAnimals.fxml"));
-          Stage stage= new Stage();
-          Scene scene1 = new Scene(fxmlLoader.load());
-          stage.initStyle(StageStyle.UNDECORATED);
-          stage.setScene(scene1);
-          stage.setTitle("Adaugare");
-          stage.show();
-      } catch(IOException ex) {
-          Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
-      }
+            FXMLLoader fxmlLoader = new FXMLLoader(AddController.class.getResource("addAnimals.fxml"));
+            Stage stage= new Stage();
+            Scene scene1 = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene1);
+            stage.setTitle("Adaugare");
+            stage.show();
+        } catch(IOException ex) {
+            Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+
+    @FXML
+    public void delete(ActionEvent event) {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(DeleteController.class.getResource("deleteAnimals.fxml"));
+            Stage stage= new Stage();
+            Scene scene1 = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene1);
+            stage.setTitle("Stergere");
+            stage.show();
+        } catch(IOException ex) {
+            Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+
+    @FXML
+    public void edit(ActionEvent event) {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(EditController.class.getResource("editAnimals.fxml"));
+            Stage stage= new Stage();
+            Scene scene1 = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene1);
+            stage.setTitle("Editare");
+            stage.show();
+        } catch(IOException ex) {
+            Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }
 
     @FXML
@@ -194,14 +228,14 @@ public class ManagerAnimalsController implements Initializable {
 
             while(result.next()) {
                 oblist.add(new Animals(
-                        result.getString("id"),
+                        result.getInt("id"),
                         result.getString("Nume"),
                         result.getString("Descriere"),
                         result.getString("Regiune"),
                         result.getString("Habitat"),
                         result.getString("Tip"),
                         result.getString("Conservare")));
-                        animals.setItems(oblist);
+                animals.setItems(oblist);
             }
         } catch(SQLException ex) {
             Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -216,8 +250,17 @@ public class ManagerAnimalsController implements Initializable {
     }
 
     private void loadDate() {
-        DataBaseConnection connectNow= new DataBaseConnection();
-        Connection connectDB= connectNow.getConnection();
+        try {
+            DataBaseConnection connectNow= new DataBaseConnection();
+            Connection connectDB= connectNow.getConnection();
+
+            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * FROM animale");
+            while(rs.next()) {
+                oblist.add(new Animals(rs.getInt("id"), rs.getString("Nume"), rs.getString("Descriere"), rs.getString("Regiune"), rs.getString("Habitat"), rs.getString("Tip"), rs.getString("Conservare")));
+            }
+        } catch (SQLException ex){
+            Logger.getLogger(AnimalsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
 
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nume.setCellValueFactory(new PropertyValueFactory<>("Nume"));
@@ -226,5 +269,9 @@ public class ManagerAnimalsController implements Initializable {
         habitat.setCellValueFactory(new PropertyValueFactory<>("Habitat"));
         tip.setCellValueFactory(new PropertyValueFactory<>("Tip"));
         conservare.setCellValueFactory(new PropertyValueFactory<>("Conservare"));
+
+
+        animals.setItems(oblist);
     }
 }
+

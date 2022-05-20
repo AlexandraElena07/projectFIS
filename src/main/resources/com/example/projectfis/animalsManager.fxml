@@ -86,8 +86,10 @@
                         <Image url="@../../../../../../imageAnimale/flamingo.jpg" />
                     </image>
                 </ImageView>
-            <Button fx:id="adauga" layoutX="102.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adauga" textFill="WHITE" />
-            <Button layoutX="189.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
+                <Button fx:id="adauga" layoutX="96.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adauga" textFill="WHITE" />
+                <Button fx:id="editare" layoutX="101.0" layoutY="449.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
+                <Button fx:id="actualizare" layoutX="177.0" layoutY="506.0" mnemonicParsing="false" onAction="#refteshTable" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
+                <Button fx:id="stergere" layoutX="188.0" layoutY="449.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #f76300;" text="Stergere" textFill="WHITE" />
             </children>
         </AnchorPane>
     </left>

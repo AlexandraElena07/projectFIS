@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="370.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AddEventsController">
+    <children>
+        <AnchorPane layoutY="-3.0" prefHeight="379.0" prefWidth="322.0">
+            <children>
+                <Label alignment="CENTER" layoutX="10.0" layoutY="22.0" prefHeight="50.0" prefWidth="302.0" text="Detalii Eveniment" textFill="#f76300">
+                    <font>
+                        <Font name="Gigi" size="31.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="titlu" alignment="CENTER_RIGHT" layoutX="118.0" layoutY="124.0" prefHeight="26.0" prefWidth="185.0" promptText="Titlu" />
+                <Label alignment="CENTER" layoutX="16.0" layoutY="162.0" prefHeight="28.0" prefWidth="94.0" text="Descriere" textFill="#f76300">
+                    <font>
+                        <Font name="Algerian" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="descriere" layoutX="118.0" layoutY="159.0" prefHeight="26.0" prefWidth="186.0" promptText="Descriere">
+                    <font>
+                        <Font name="Bodoni MT Black" size="12.0" />
+                    </font>
+                </TextField>
+                <Label alignment="CENTER" layoutX="34.0" layoutY="127.0" prefHeight="28.0" prefWidth="60.0" text="Titlu " textFill="#f76300">
+                    <font>
+                        <Font name="Algerian" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="save" layoutX="25.0" layoutY="296.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="inchidere" layoutX="170.0" layoutY="296.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #000000;" text="Inchidere" textFill="WHITE">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </Button>
+                <Label fx:id="saveLabel" alignment="CENTER" layoutX="26.0" layoutY="241.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>
