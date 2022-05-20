@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="416.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.ManagerEventsController">
+    <right>
+        <Pane prefHeight="432.0" prefWidth="690.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="events" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="690.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="37.60005033016205" text="ID" />
+                        <TableColumn fx:id="titlu" prefWidth="283.9999465942383" text="Titlu" />
+                        <TableColumn fx:id="descriere" prefWidth="371.9999084472656" text="Descriere" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="416.0" prefWidth="250.0" style="-fx-background-color: #f76300;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="pozaPonei" fitHeight="431.0" fitWidth="278.0" layoutX="-9.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../Evenimente/ponei.jpg" />
+                    </image>
+                </ImageView>
+                <Button fx:id="back" layoutX="8.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
+                <Button fx:id="voturi" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
+                <Button fx:id="actualizare" layoutX="163.0" layoutY="395.0" mnemonicParsing="false" onAction="#refteshTable" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
+                <Button fx:id="adaugare" layoutX="174.0" layoutY="251.0" mnemonicParsing="false" onAction="#getAddView" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Adaugare" textFill="WHITE" />
+                <Button fx:id="stergere" layoutX="174.0" layoutY="205.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Stergere" textFill="WHITE" />
+                <Button fx:id="editare" layoutX="174.0" layoutY="163.0" mnemonicParsing="false" onAction="#edit" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
