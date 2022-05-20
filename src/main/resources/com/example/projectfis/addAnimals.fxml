@@ -11,75 +11,65 @@
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="438.0" prefWidth="425.0">
          <children>
-            <Label alignment="CENTER" layoutX="28.0" layoutY="14.0" prefHeight="47.0" prefWidth="372.0" text="Informatii Animale" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="39.0" layoutY="21.0" prefHeight="47.0" prefWidth="372.0" text="Informatii Animal" textFill="#f76300">
                <font>
                   <Font name="Gigi" size="31.0" />
                </font>
             </Label>
-            <TextField fx:id="id" alignment="BOTTOM_LEFT" layoutX="104.0" layoutY="93.0" prefHeight="26.0" prefWidth="302.0" promptText="ID">
-               <font>
-                  <Font name="Broadway" size="12.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="nume" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="125.0" prefHeight="26.0" prefWidth="329.0" promptText="Nume" />
-            <Label layoutX="8.0" layoutY="161.0" prefHeight="24.0" prefWidth="82.0" text="Descriere" textFill="#f76300">
+            <TextField fx:id="nume" alignment="CENTER_RIGHT" layoutX="90.0" layoutY="106.0" prefHeight="26.0" prefWidth="329.0" promptText="Nume" />
+            <Label layoutX="12.0" layoutY="143.0" prefHeight="24.0" prefWidth="82.0" text="Descriere" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="descriere" layoutX="106.0" layoutY="160.0" prefHeight="26.0" prefWidth="302.0" promptText="Descriere">
+            <TextField fx:id="descriere" layoutX="110.0" layoutY="142.0" prefHeight="26.0" prefWidth="302.0" promptText="Descriere">
                <font>
                   <Font name="Bodoni MT Black" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="regiune" alignment="CENTER_RIGHT" layoutX="91.0" layoutY="192.0" prefHeight="26.0" prefWidth="329.0" promptText="Regiune">
+            <TextField fx:id="regiune" alignment="CENTER_RIGHT" layoutX="91.0" layoutY="180.0" prefHeight="26.0" prefWidth="329.0" promptText="Regiune">
                <font>
                   <Font name="Bookman Old Style" size="12.0" />
                </font>
             </TextField>
-            <Label alignment="CENTER" layoutX="9.0" layoutY="227.0" prefHeight="24.0" prefWidth="82.0" text="Habitat" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="13.0" layoutY="220.0" prefHeight="24.0" prefWidth="82.0" text="Habitat" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="habitat" layoutX="105.0" layoutY="226.0" prefHeight="26.0" prefWidth="302.0" promptText="Habitat">
+            <TextField fx:id="habitat" layoutX="109.0" layoutY="219.0" prefHeight="26.0" prefWidth="302.0" promptText="Habitat">
                <font>
                   <Font name="Franklin Gothic Demi" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="tip" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="261.0" prefHeight="26.0" prefWidth="329.0" promptText="Tip">
+            <TextField fx:id="tip" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="254.0" prefHeight="26.0" prefWidth="329.0" promptText="Tip">
                <font>
                   <Font name="Tahoma" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="conservare" alignment="CENTER" layoutX="107.0" layoutY="293.0" prefHeight="26.0" prefWidth="302.0" promptText="Conservare">
+            <TextField fx:id="conservare" alignment="CENTER" layoutX="111.0" layoutY="289.0" prefHeight="26.0" prefWidth="302.0" promptText="Conservare">
                <font>
                   <Font name="Sitka Small" size="12.0" />
                </font>
             </TextField>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="262.0" prefHeight="24.0" prefWidth="82.0" text="Tip" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="7.0" layoutY="255.0" prefHeight="24.0" prefWidth="82.0" text="Tip" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="8.0" layoutY="294.0" prefHeight="24.0" prefWidth="100.0" text="Conservare" textFill="#f76300">
+            <Label layoutX="12.0" layoutY="290.0" prefHeight="24.0" prefWidth="100.0" text="Conservare" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="15.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="5.0" layoutY="193.0" prefHeight="24.0" prefWidth="82.0" text="Regiune" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="5.0" layoutY="181.0" prefHeight="24.0" prefWidth="82.0" text="Regiune" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="5.0" layoutY="126.0" prefHeight="24.0" prefWidth="82.0" text="Nume" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="6.0" layoutY="107.0" prefHeight="24.0" prefWidth="82.0" text="Nume" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="22.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="5.0" layoutY="94.0" prefHeight="24.0" prefWidth="82.0" text="ID" textFill="#f76300">
-               <font>
-                  <Font name="Algerian" size="24.0" />
                </font>
             </Label>
             <Button fx:id="salvare" layoutX="21.0" layoutY="373.0" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
@@ -92,7 +82,7 @@
                   <Font name="Century Gothic" size="24.0" />
                </font>
             </Button>
-            <Label fx:id="saveLabel" alignment="CENTER" layoutX="80.0" layoutY="336.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
+            <Label fx:id="saveLabel" alignment="CENTER" layoutX="69.0" layoutY="335.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
          </children>
       </AnchorPane>
    </children>

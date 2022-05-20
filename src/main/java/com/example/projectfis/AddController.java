@@ -45,11 +45,11 @@ public class AddController {
 
     @FXML
     public void save(ActionEvent event) throws  Exception {
-        if (id.getText().isBlank() == false || nume.getText().isBlank() == false || descriere.getText().isBlank() == false || regiune.getText().isBlank() == false || habitat.getText().isBlank() == false || tip.getText().isBlank() == false || conservare.getText().isBlank() == false) {
+        if (nume.getText().isBlank() == false || descriere.getText().isBlank() == false || regiune.getText().isBlank() == false || habitat.getText().isBlank() == false || tip.getText().isBlank() == false || conservare.getText().isBlank() == false) {
             DataBaseConnection connectNow = new DataBaseConnection();
             Connection connectDB = connectNow.getConnection();
 
-            String animale = "INSERT INTO animale (id, Nume, Descriere, Regiune, Habitat, Tip, Conservare) VALUES ('" + id.getText() + "', '" + nume.getText() + "', '" + descriere.getText() + "', '" + regiune.getText() + "', '" + habitat.getText() + "', '" + tip.getText() + "', '" + conservare.getText() + "')";
+            String animale = "INSERT INTO animale (Nume, Descriere, Regiune, Habitat, Tip, Conservare) VALUES ('" +  nume.getText() + "', '" + descriere.getText() + "', '" + regiune.getText() + "', '" + habitat.getText() + "', '" + tip.getText() + "', '" + conservare.getText() + "')";
 
 
             try {
@@ -59,7 +59,7 @@ public class AddController {
 
 
             } catch (Exception e) {
-                saveLabel.setText("ID-ul introdus exista deja!");
+                saveLabel.setText("Numele introdus exista deja!");
             }
 
         }

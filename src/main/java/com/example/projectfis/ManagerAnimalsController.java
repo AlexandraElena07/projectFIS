@@ -34,7 +34,6 @@ public class ManagerAnimalsController implements Initializable {
     @FXML
     private Button back;
 
-
     @FXML
     private Button stergere;
 
