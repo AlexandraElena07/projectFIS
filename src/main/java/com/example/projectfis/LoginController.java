@@ -151,7 +151,34 @@ public class LoginController implements Initializable {
                     menu_stage.setTitle("Menu");
                     menu_stage.show();
                 } else {
-                    loginMessage.setText("Datele nu corespund!");
+                    DataBaseConnection connect= new DataBaseConnection();
+                    Connection connectDB_new= connect.getConnection();
+
+                    String verifyLoginPersonal= "SELECT count(1) FROM personal WHERE usernamepersonal = '" + enterUsernameField.getText() + "'AND passwordpersonal = '" + hasedPassword + "'";
+                    try {
+                        Statement statement_Personal= connectDB_new.createStatement();
+                        ResultSet queryResult_Personal = statement_Personal.executeQuery(verifyLoginPersonal);
+                        while(queryResult_Personal.next()) {
+                            if(queryResult_Personal.getInt(1) == 1) {
+                                loginMessage.setText("Congrats Personal");
+                                FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menuPersonal.fxml"));
+                                Stage menu_stage= new Stage();
+                                Scene scene1 = new Scene(fxmlLoader1.load(), 871,  343);
+                                menu_stage.initStyle(StageStyle.UNDECORATED);
+                                menu_stage.setScene(scene1);
+                                menu_stage.setTitle("Menu");
+                                menu_stage.show();
+                            } else {
+                                loginMessage.setText("Invalid Login");
+                            }
+                        }
+
+
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    }
+
                 }
             }
 
@@ -161,8 +188,8 @@ public class LoginController implements Initializable {
             e.getCause();
         }
 
-
     }
+
 
     public void createAccountForm() {
         try {
