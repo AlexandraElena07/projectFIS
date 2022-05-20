@@ -55,7 +55,7 @@ public class DeleteController {
 
             }
 
-            if (ok == 0) deleteLabel.setText("ID ul introdus nu exista!");
+            if (ok == 0) deleteLabel.setText("ID-ul introdus nu exista!");
 
 
 

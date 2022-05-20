@@ -73,7 +73,7 @@ public class EditController {
 
                 }
 
-                if (ok == 0) editLabel.setText("ID ul introdus nu exista!");
+                if (ok == 0) editLabel.setText("ID-ul introdus nu exista!");
 
 
 
