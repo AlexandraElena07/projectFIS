@@ -32,7 +32,7 @@
                     </image>
                 </ImageView>
                 <Button fx:id="back" layoutX="8.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
-                <Button fx:id="voturi" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
+                <Button fx:id="voturi" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#votes" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
                 <Button fx:id="actualizare" layoutX="163.0" layoutY="395.0" mnemonicParsing="false" onAction="#refteshTable" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
                 <Button fx:id="adaugare" layoutX="174.0" layoutY="251.0" mnemonicParsing="false" onAction="#getAddView" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Adaugare" textFill="WHITE" />
                 <Button fx:id="stergere" layoutX="174.0" layoutY="205.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Stergere" textFill="WHITE" />

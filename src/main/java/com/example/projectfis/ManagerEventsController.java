@@ -126,6 +126,22 @@ public class ManagerEventsController implements Initializable {
         }
     }
 
+    @FXML
+    public void votes(ActionEvent event) {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(EditController.class.getResource("afisareVoturi.fxml"));
+            Stage stage= new Stage();
+            Scene scene1 = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene1);
+            stage.setTitle("Afisare voturi");
+            stage.show();
+        } catch(IOException ex) {
+            Logger.getLogger(ManagerEventsController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+
 
     @FXML
     public void refteshTable(ActionEvent event) {
