@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="359.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.VotesNameController">
+    <children>
+        <ComboBox fx:id="cbBox" layoutX="24.0" layoutY="211.0" onAction="#select" prefWidth="150.0" promptText="Alege" style="-fx-background-color: #f76300;" />
+        <Button fx:id="save" layoutX="297.0" layoutY="318.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="85.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE" />
+        <Label fx:id="label" layoutX="45.0" layoutY="144.0" prefHeight="26.0" prefWidth="168.0" textFill="#f76300">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+        <Label fx:id="labelvote" alignment="CENTER" layoutX="224.0" layoutY="273.0" prefHeight="26.0" prefWidth="230.0" textFill="#f76300" />
+      <Label alignment="CENTER" layoutX="45.0" layoutY="23.0" prefHeight="46.0" prefWidth="368.0" text="Votarea numelui pentru puiutul de leu" textFill="#f76300">
+         <font>
+            <Font name="French Script MT" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="110.0" prefHeight="33.0" prefWidth="175.0" text="Numele ales de dvs" textFill="#f76300">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="leuImage" fitHeight="172.0" fitWidth="230.0" layoutX="240.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Evenimente/leu.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="cancelButton" layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #f76300;" text="Inchidere" textFill="WHITE" />
+    </children>
+</AnchorPane>

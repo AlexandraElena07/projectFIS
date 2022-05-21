@@ -3,12 +3,17 @@ package com.example.projectfis;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.w3c.dom.events.Event;
 
 import java.io.File;
@@ -38,6 +43,9 @@ public class EventsController implements Initializable {
     @FXML
     private TableColumn<Events, String> descriere;
 
+    @FXML
+    private Button votesButton;
+
     ObservableList<Events> oblist = FXCollections.observableArrayList();
 
     @Override
@@ -65,5 +73,22 @@ public class EventsController implements Initializable {
 
 
         events.setItems(oblist);
+    }
+
+    public void votesButtonOnAction() {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("votesName.fxml"));
+            Stage stage= new Stage();
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.setTitle("Votarea Numelui");
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }
