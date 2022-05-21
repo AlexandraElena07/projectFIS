@@ -32,7 +32,7 @@
                     </image>
                 </ImageView>
                 <Button layoutX="8.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
-                <Button layoutX="168.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
+                <Button fx:id="votesButton" layoutX="168.0" layoutY="395.0" mnemonicParsing="false" onAction="#votesButtonOnAction" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f76300;" text="Voturi" textFill="WHITE" />
             </children>
         </AnchorPane>
     </left>
