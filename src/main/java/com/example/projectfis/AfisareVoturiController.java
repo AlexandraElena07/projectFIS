@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
@@ -99,6 +100,11 @@ public class AfisareVoturiController implements Initializable {
 
         }
 
+    }
+
+    public void cancelButtonOnAction(ActionEvent event) {
+        Stage stage = (Stage) back.getScene().getWindow();
+        stage.close();
     }
 
 }

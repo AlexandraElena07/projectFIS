@@ -7,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="376.0" prefWidth="642.0" style="-fx-background-color: #f68438;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AfisareDonatiiController">
     <children>
         <ImageView fx:id="poza" fitHeight="376.0" fitWidth="366.0" layoutX="-78.0" pickOnBounds="true" preserveRatio="true">
@@ -17,11 +16,11 @@
         </ImageView>
         <TableView fx:id="table" layoutX="186.0" prefHeight="376.0" prefWidth="456.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="134.40003967285156" text="Nr donatie" />
+                <TableColumn fx:id="id" prefWidth="134.40003967285156" text="Număr donație" />
                 <TableColumn fx:id="nume" prefWidth="158.4000244140625" text="Nume donator" />
-                <TableColumn fx:id="sumadonata" prefWidth="164.79998779296875" text="Suma donata" />
+                <TableColumn fx:id="sumadonata" prefWidth="164.79998779296875" text="Suma donată" />
             </columns>
         </TableView>
-        <Button fx:id="back" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Inapoi" textFill="WHITE" />
+        <Button fx:id="back" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchTOMenuPersonal" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
     </children>
 </AnchorPane>

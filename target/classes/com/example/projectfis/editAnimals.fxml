@@ -31,7 +31,7 @@
                         <Font name="Century Gothic" size="24.0" />
                     </font>
                 </Button>
-                <Button fx:id="inchidere" layoutX="172.0" layoutY="323.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Inchidere" textFill="WHITE">
+                <Button fx:id="inchidere" layoutX="172.0" layoutY="323.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Închidere" textFill="WHITE">
                     <font>
                         <Font name="Century Gothic" size="24.0" />
                     </font>

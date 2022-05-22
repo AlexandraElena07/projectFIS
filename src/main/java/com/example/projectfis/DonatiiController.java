@@ -2,12 +2,19 @@ package com.example.projectfis;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -73,7 +80,7 @@ public class DonatiiController implements  Initializable{
                 try {
                     Statement statement = connectDB.createStatement();
                     statement.executeUpdate(verifyPayment);
-                    labeldonatii.setText("Multumim pentru donatie!");
+                    labeldonatii.setText("Vă mulțumim pentru donație!");
                     loadData();
 
                 } catch (Exception e) {
@@ -106,5 +113,17 @@ public class DonatiiController implements  Initializable{
             e.printStackTrace();
             e.getCause();
         }
+    }
+
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
+
+    public void switchTOMenu(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load((getClass().getResource("menu.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Meniu");
+        stage.show();
     }
 }

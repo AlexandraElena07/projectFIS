@@ -7,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="376.0" prefWidth="642.0" style="-fx-background-color: #f68438;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AfisareBileteController">
     <children>
         <ImageView fx:id="poza" fitHeight="376.0" fitWidth="366.0" layoutX="-78.0" pickOnBounds="true" preserveRatio="true">
@@ -17,11 +16,11 @@
         </ImageView>
         <TableView fx:id="table" layoutX="186.0" prefHeight="376.0" prefWidth="456.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="134.40003967285156" text="Id bilet" />
-                <TableColumn fx:id="nume" prefWidth="158.4000244140625" text="Nume cumparator" />
-                <TableColumn fx:id="tip" prefWidth="164.79998779296875" text="Tip bilet" />
+                <TableColumn fx:id="id" prefWidth="48.79998779296875" text="Id bilet" />
+                <TableColumn fx:id="nume" prefWidth="218.3999786376953" text="Nume cumpărător" />
+                <TableColumn fx:id="tip" prefWidth="192.79998779296875" text="Tip bilet" />
             </columns>
         </TableView>
-        <Button fx:id="back" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Inapoi" textFill="WHITE" />
+        <Button fx:id="back" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchTOMenuPersonal" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
     </children>
 </AnchorPane>

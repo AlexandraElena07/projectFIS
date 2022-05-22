@@ -2,9 +2,12 @@ package com.example.projectfis;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -17,6 +20,7 @@ import javafx.stage.StageStyle;
 import org.w3c.dom.events.Event;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,6 +49,9 @@ public class EventsController implements Initializable {
 
     @FXML
     private Button votesButton;
+
+    @FXML
+    private Button back;
 
     ObservableList<Events> oblist = FXCollections.observableArrayList();
 
@@ -81,7 +88,6 @@ public class EventsController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("votesName.fxml"));
             Stage stage= new Stage();
             Scene scene = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.setTitle("Votarea Numelui");
             stage.show();
@@ -90,5 +96,17 @@ public class EventsController implements Initializable {
             e.printStackTrace();
             e.getCause();
         }
+    }
+
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
+
+    public void switchTOMenu(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load((getClass().getResource("menu.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Meniu");
+        stage.show();
     }
 }

@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -174,10 +175,9 @@ public class ManagerAnimalsController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader(AddController.class.getResource("addAnimals.fxml"));
             Stage stage= new Stage();
-            Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene1);
-            stage.setTitle("Adaugare");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.setTitle("Adăugare animal");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -191,9 +191,8 @@ public class ManagerAnimalsController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(DeleteController.class.getResource("deleteAnimals.fxml"));
             Stage stage= new Stage();
             Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene1);
-            stage.setTitle("Stergere");
+            stage.setTitle("Ștergere animal");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -207,9 +206,8 @@ public class ManagerAnimalsController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(EditController.class.getResource("editAnimals.fxml"));
             Stage stage= new Stage();
             Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene1);
-            stage.setTitle("Editare");
+            stage.setTitle("Editare animal");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerAnimalsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -225,6 +223,7 @@ public class ManagerAnimalsController implements Initializable {
             Connection connectDB= connectNow.getConnection();
 
             ResultSet result = connectDB.createStatement().executeQuery("SELECT * FROM animale");
+
 
             while(result.next()) {
                 oblist.add(new Animals(
@@ -272,6 +271,18 @@ public class ManagerAnimalsController implements Initializable {
 
 
         animals.setItems(oblist);
+    }
+
+    Parent root;
+    Scene scene;
+    Stage stage;
+
+    public void switchTOMenuPersonal(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load((getClass().getResource("menuPersonal.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Meniu Personal");
+        stage.show();
     }
 }
 

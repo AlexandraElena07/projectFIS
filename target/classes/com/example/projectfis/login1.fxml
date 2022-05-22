@@ -51,12 +51,12 @@
                         <Image url="@../../../../../../ProiectFis/giraffe.png" />
                     </image>
                 </ImageView>
-                <Label fx:id="loginMessage" alignment="CENTER" layoutX="21.0" layoutY="337.0" prefHeight="19.0" prefWidth="235.0" textFill="#f76300">
+                <Label fx:id="loginMessage" alignment="CENTER" layoutX="1.0" layoutY="337.0" prefHeight="19.0" prefWidth="274.0" textFill="#f76300">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </Label>
-                <Button fx:id="cancelButton" layoutX="177.0" layoutY="364.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #f76300;" text="Cancel" textFill="WHITE">
+                <Button fx:id="cancelButton" layoutX="177.0" layoutY="364.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="Închidere" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font></Button>

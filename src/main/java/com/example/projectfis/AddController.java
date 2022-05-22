@@ -49,17 +49,21 @@ public class AddController {
             DataBaseConnection connectNow = new DataBaseConnection();
             Connection connectDB = connectNow.getConnection();
 
+
+
             String animale = "INSERT INTO animale (Nume, Descriere, Regiune, Habitat, Tip, Conservare) VALUES ('" +  nume.getText() + "', '" + descriere.getText() + "', '" + regiune.getText() + "', '" + habitat.getText() + "', '" + tip.getText() + "', '" + conservare.getText() + "')";
 
 
             try {
+
                 PreparedStatement preparedStmt = connectDB.prepareStatement(animale);
                 preparedStmt.execute();
-                saveLabel.setText("Informatiile au fost adaugate cu succes!");
+                saveLabel.setText("Informațiile au fost adăugate cu succes!");
+
 
 
             } catch (Exception e) {
-                saveLabel.setText("Numele introdus exista deja!");
+                saveLabel.setText("Numele introdus există deja!");
             }
 
         }

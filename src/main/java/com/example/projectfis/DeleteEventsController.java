@@ -45,7 +45,7 @@ public class DeleteEventsController {
             while (queryResult.next()) {
 
                 if (queryResult.getInt(1) != 1) {
-                    deleteLabel.setText("Informatiile au fost sterse!");
+                    deleteLabel.setText("Informațiile au fost șterse!");
                     st2.executeUpdate(animale);
                     ok = 1;
 

@@ -10,24 +10,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="493.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.DonatiiController">
     <children>
-        <TextField fx:id="numarcard" layoutX="37.0" layoutY="85.0" promptText="Numar card" />
-        <TextField fx:id="numedonator" layoutX="37.0" layoutY="151.0" promptText="Numele si prenumele" />
-        <Label layoutX="37.0" layoutY="59.0" prefHeight="26.0" prefWidth="150.0" text="Numar Card" textFill="#f76300" />
-        <Label layoutX="37.0" layoutY="125.0" prefHeight="26.0" prefWidth="150.0" text="Numele si prenumele" textFill="#f76300" />
+        <TextField fx:id="numarcard" layoutX="37.0" layoutY="85.0" promptText="Număr card" />
+        <TextField fx:id="numedonator" layoutX="37.0" layoutY="151.0" promptText="Numele și prenumele" />
+        <Label layoutX="37.0" layoutY="59.0" prefHeight="26.0" prefWidth="150.0" text="Număr Card" textFill="#f76300" />
+        <Label layoutX="37.0" layoutY="125.0" prefHeight="26.0" prefWidth="150.0" text="Numele și prenumele" textFill="#f76300" />
         <Label fx:id="labelBilete" alignment="CENTER" layoutX="45.0" layoutY="281.0" prefHeight="26.0" prefWidth="162.0" textAlignment="CENTER" textFill="#f76300" />
         <ImageView fx:id="pandarosu" fitHeight="186.0" fitWidth="250.0" layoutX="207.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../../Donatie/pandarosu.jpg" />
             </image>
         </ImageView>
-        <Label alignment="CENTER" layoutX="159.0" layoutY="23.0" prefHeight="26.0" prefWidth="162.0" text="Donatii" textAlignment="CENTER" textFill="#f76300">
+        <Label alignment="CENTER" layoutX="159.0" layoutY="23.0" prefHeight="26.0" prefWidth="162.0" text="Donații" textAlignment="CENTER" textFill="#f76300">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="back" layoutX="393.0" layoutY="283.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
-        <TextField fx:id="suma" layoutX="37.0" layoutY="221.0" promptText="Suma donata" />
-        <Label layoutX="37.0" layoutY="195.0" prefHeight="26.0" prefWidth="150.0" text="Suma donata" textFill="#f76300" />
+        <Button fx:id="back" layoutX="393.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchTOMenu" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
+        <TextField fx:id="suma" layoutX="37.0" layoutY="221.0" promptText="Suma donată" />
+        <Label layoutX="37.0" layoutY="195.0" prefHeight="26.0" prefWidth="150.0" text="Suma donată" textFill="#f76300" />
         <Button fx:id="donare" layoutX="76.0" layoutY="273.0" mnemonicParsing="false" onAction="#facereDonatie" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Donare" textFill="WHITE" />
         <Label fx:id="labeldonatii" alignment="CENTER" layoutX="173.0" layoutY="288.0" prefHeight="26.0" prefWidth="169.0" textFill="#f76300" />
     </children>
