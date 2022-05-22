@@ -7,27 +7,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="438.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AddController">
+<Pane prefHeight="452.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AddController">
    <children>
-      <AnchorPane layoutY="-2.0" prefHeight="438.0" prefWidth="425.0">
+      <AnchorPane layoutY="-2.0" prefHeight="452.0" prefWidth="362.0">
          <children>
-            <Label alignment="CENTER" layoutX="39.0" layoutY="21.0" prefHeight="47.0" prefWidth="372.0" text="Informatii Animal" textFill="#f76300">
+            <Label alignment="CENTER" layoutX="37.0" layoutY="31.0" prefHeight="50.0" prefWidth="287.0" text="Informatii Animal" textFill="#f76300">
                <font>
                   <Font name="Gigi" size="31.0" />
                </font>
             </Label>
-            <TextField fx:id="nume" alignment="CENTER_RIGHT" layoutX="90.0" layoutY="106.0" prefHeight="26.0" prefWidth="329.0" promptText="Nume" />
+            <TextField fx:id="nume" alignment="CENTER_RIGHT" layoutX="90.0" layoutY="106.0" prefHeight="26.0" prefWidth="248.0" promptText="Nume" />
             <Label layoutX="12.0" layoutY="143.0" prefHeight="24.0" prefWidth="82.0" text="Descriere" textFill="#f76300">
                <font>
                   <Font name="Algerian" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="descriere" layoutX="110.0" layoutY="142.0" prefHeight="26.0" prefWidth="302.0" promptText="Descriere">
+            <TextField fx:id="descriere" layoutX="110.0" layoutY="142.0" prefHeight="26.0" prefWidth="248.0" promptText="Descriere">
                <font>
                   <Font name="Bodoni MT Black" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="regiune" alignment="CENTER_RIGHT" layoutX="91.0" layoutY="180.0" prefHeight="26.0" prefWidth="329.0" promptText="Regiune">
+            <TextField fx:id="regiune" alignment="CENTER_RIGHT" layoutX="91.0" layoutY="180.0" prefHeight="26.0" prefWidth="248.0" promptText="Regiune">
                <font>
                   <Font name="Bookman Old Style" size="12.0" />
                </font>
@@ -37,17 +37,17 @@
                   <Font name="Algerian" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="habitat" layoutX="109.0" layoutY="219.0" prefHeight="26.0" prefWidth="302.0" promptText="Habitat">
+            <TextField fx:id="habitat" layoutX="109.0" layoutY="219.0" prefHeight="26.0" prefWidth="248.0" promptText="Habitat">
                <font>
                   <Font name="Franklin Gothic Demi" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="tip" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="254.0" prefHeight="26.0" prefWidth="329.0" promptText="Tip">
+            <TextField fx:id="tip" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="254.0" prefHeight="26.0" prefWidth="248.0" promptText="Tip">
                <font>
                   <Font name="Tahoma" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="conservare" alignment="CENTER" layoutX="111.0" layoutY="289.0" prefHeight="26.0" prefWidth="302.0" promptText="Conservare">
+            <TextField fx:id="conservare" alignment="CENTER" layoutX="111.0" layoutY="289.0" prefHeight="26.0" prefWidth="248.0" promptText="Conservare">
                <font>
                   <Font name="Sitka Small" size="12.0" />
                </font>
@@ -72,17 +72,17 @@
                   <Font name="Algerian" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="salvare" layoutX="21.0" layoutY="373.0" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
+            <Button fx:id="salvare" layoutX="23.0" layoutY="383.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #f76300;" text="Salvare" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="inchidere" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: #000000;" text="Inchidere" textFill="WHITE">
+            <Button fx:id="inchidere" layoutX="195.0" layoutY="383.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Închidere" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="24.0" />
                </font>
             </Button>
-            <Label fx:id="saveLabel" alignment="CENTER" layoutX="69.0" layoutY="335.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
+            <Label fx:id="saveLabel" alignment="CENTER" layoutX="37.0" layoutY="345.0" prefHeight="24.0" prefWidth="287.0" textFill="#f76300" />
          </children>
       </AnchorPane>
    </children>

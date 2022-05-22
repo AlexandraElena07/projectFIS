@@ -84,7 +84,7 @@ public class VotesNameController implements Initializable {
             try {
                 Statement statement = connectDB.createStatement();
                 statement.executeUpdate(verify);
-                labelvote.setText("Va multumim pentru vot!");
+                labelvote.setText("Vă mulțumim pentru vot!");
 
 
             } catch (SQLException ex) {
@@ -94,7 +94,7 @@ public class VotesNameController implements Initializable {
 
 
         } else
-            labelvote.setText("Va rugam sa alegeti optiunea dorita! ");
+            labelvote.setText("Vă rugăm să alegeți opțiunea dorită! ");
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

@@ -6,20 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.IncarcarePozeController">
     <children>
         <TextField fx:id="nume" layoutX="20.0" layoutY="114.0" prefHeight="26.0" prefWidth="261.0" promptText="Nume" />
-        <Label alignment="CENTER" layoutX="20.0" layoutY="25.0" prefHeight="40.0" prefWidth="278.0" text="Incarcare Fotografii" textFill="#f76300">
+        <Label alignment="CENTER" layoutX="20.0" layoutY="25.0" prefHeight="40.0" prefWidth="278.0" text="Încărcare Fotografii" textFill="#f76300">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
         <Label layoutX="19.0" layoutY="87.0" prefHeight="26.0" prefWidth="150.0" text="Nume" />
-        <TextField fx:id="fotografie" layoutX="20.0" layoutY="186.0" prefHeight="26.0" prefWidth="261.0" promptText="Calea catre fotografie" />
-        <Label layoutX="19.0" layoutY="159.0" prefHeight="26.0" prefWidth="150.0" text="Calea catre fotografie" />
+        <TextField fx:id="fotografie" layoutX="20.0" layoutY="186.0" prefHeight="26.0" prefWidth="261.0" promptText="Calea către fotografie" />
+        <Label layoutX="19.0" layoutY="159.0" prefHeight="26.0" prefWidth="150.0" text="Calea către fotografie" />
         <Label fx:id="label" alignment="CENTER" layoutX="38.0" layoutY="308.0" prefHeight="26.0" prefWidth="233.0" textFill="#f76300" />
-        <Button fx:id="back" layoutX="20.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #f76300;" text="Inapoi" textFill="WHITE" />
-        <Button fx:id="incarcare" layoutX="106.0" layoutY="242.0" mnemonicParsing="false" onAction="#adaugarePoza" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #f76300;" text="Incarcare" textFill="WHITE" />
+        <Button fx:id="back" layoutX="20.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchTOMenu" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
+        <Button fx:id="incarcare" layoutX="106.0" layoutY="242.0" mnemonicParsing="false" onAction="#adaugarePoza" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #f76300;" text="Încărcare" textFill="WHITE" />
     </children>
 </AnchorPane>

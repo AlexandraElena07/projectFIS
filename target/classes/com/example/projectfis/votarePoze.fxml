@@ -9,17 +9,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane prefHeight="368.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.VotarePozeController">
+<Pane prefHeight="368.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.VotarePozeController">
     <children>
         <AnchorPane layoutX="268.0" prefHeight="368.0" prefWidth="276.0">
             <children>
-                <TableView fx:id="table" prefHeight="368.0" prefWidth="276.0">
+                <TableView fx:id="table" prefHeight="368.0" prefWidth="289.0">
                     <columns>
                         <TableColumn fx:id="idpoza" prefWidth="18.4000244140625" text="ID" />
-                        <TableColumn fx:id="nume" prefWidth="104.0" text="Nume" />
-                        <TableColumn fx:id="path" prefWidth="100.0" text="Poza" />
-                        <TableColumn fx:id="contor" prefWidth="52.0" text="Contor" />
+                        <TableColumn fx:id="nume" prefWidth="87.199951171875" text="Nume" />
+                        <TableColumn fx:id="path" prefWidth="96.0" text="Poza" />
+                        <TableColumn fx:id="contor" prefWidth="86.4000183105469" text="Număr voturi" />
                     </columns>
                 </TableView>
             </children>
@@ -31,7 +30,7 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Button fx:id="back" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #f76300;" text="Inapoi" textFill="WHITE" />
+        <Button fx:id="back" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#switchTOMenuPersonal" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
         <Button fx:id="votare" layoutX="20.0" layoutY="215.0" mnemonicParsing="false" onAction="#votare" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #f76300;" text="Votare" textFill="WHITE" />
         <Button fx:id="actualizare" layoutX="150.0" layoutY="215.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
     </children>

@@ -3,6 +3,8 @@ package com.example.projectfis;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -90,14 +93,15 @@ public class LoginController implements Initializable {
     }
     public void login(ActionEvent event) throws NoSuchAlgorithmException {
 
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         if(enterUsernameField.getText().isBlank()==false && enterPasswordField.getText().isBlank()==false)
         {
-            loginMessage.setText("Ai incercat sa te autentifici");
+            loginMessage.setText("Ai încercat să te autentifici!");
             validateLogin();
         }
         else
         {
-            loginMessage.setText("Te rog introdu numele de utilizator si parola!");
+            loginMessage.setText("Intodu numele de utilizator și parola!");
         }
     }
 
@@ -106,10 +110,25 @@ public class LoginController implements Initializable {
         stage.close();
     }
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
 
     public void inregistrareButtonOnAction(ActionEvent event) {
-        //Stage stage = (Stage) inregistrareButton.getScene().getWindow();
-        createAccountForm();
+        // Stage stage = (Stage) inregistrareButton.getScene().getWindow();
+        //createAccountForm();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Înregistrare");
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 
@@ -119,6 +138,7 @@ public class LoginController implements Initializable {
     }
 
     public void validateLogin() throws NoSuchAlgorithmException {
+
         DataBaseConnection connectNow= new DataBaseConnection();
         Connection connectDB= connectNow.getConnection();
 
@@ -142,14 +162,19 @@ public class LoginController implements Initializable {
             while(queryResult.next()) {
                 if(queryResult.getInt(1) == 1) {
 
-                    loginMessage.setText("Congrats");
-                    FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menu.fxml"));
+                    loginMessage.setText("Autentificare reușită!");
+                   /* FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menu.fxml"));
                     Stage menu_stage= new Stage();
-                    Scene scene1 = new Scene(fxmlLoader1.load(), 871,  343);
+                    Scene scene1 = new Scene(fxmlLoader1.load());
                     menu_stage.initStyle(StageStyle.UNDECORATED);
                     menu_stage.setScene(scene1);
                     menu_stage.setTitle("Menu");
-                    menu_stage.show();
+                    menu_stage.show();*/
+
+                    Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Meniu");
+                    stage.show();
                 } else {
                     DataBaseConnection connect= new DataBaseConnection();
                     Connection connectDB_new= connect.getConnection();
@@ -160,16 +185,13 @@ public class LoginController implements Initializable {
                         ResultSet queryResult_Personal = statement_Personal.executeQuery(verifyLoginPersonal);
                         while(queryResult_Personal.next()) {
                             if(queryResult_Personal.getInt(1) == 1) {
-                                loginMessage.setText("Congrats Personal");
-                                FXMLLoader fxmlLoader1 = new FXMLLoader(MenuController.class.getResource("menuPersonal.fxml"));
-                                Stage menu_stage= new Stage();
-                                Scene scene1 = new Scene(fxmlLoader1.load(), 871,  343);
-                                menu_stage.initStyle(StageStyle.UNDECORATED);
-                                menu_stage.setScene(scene1);
-                                menu_stage.setTitle("Menu");
-                                menu_stage.show();
+                                loginMessage.setText("Autentificare reușită ca personal!");
+                                Parent root = FXMLLoader.load(getClass().getResource("menuPersonal.fxml"));
+                                stage.setScene(new Scene(root));
+                                stage.setTitle("Meniu Personal");
+                                stage.show();
                             } else {
-                                loginMessage.setText("Invalid Login");
+                                loginMessage.setText("Autentificare nereușită!");
                             }
                         }
 
@@ -188,24 +210,6 @@ public class LoginController implements Initializable {
             e.getCause();
         }
 
-    }
-
-
-    public void createAccountForm() {
-        try {
-
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
-            Stage register_stage= new Stage();
-            Scene scene = new Scene(fxmlLoader.load(), 520, 562);
-            register_stage.initStyle(StageStyle.UNDECORATED);
-            register_stage.setScene(scene);
-            register_stage.setTitle("Inregistrare");
-            register_stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
     }
 
 }

@@ -48,15 +48,13 @@ public class AddEventsController {
             try {
                 PreparedStatement preparedStmt = connectDB.prepareStatement(evenimente);
                 preparedStmt.execute();
-                saveLabel.setText("Detaliile au fost adaugate cu succes!");
+                saveLabel.setText("Detaliile au fost adăugate cu succes!");
 
 
             } catch (Exception e) {
-                saveLabel.setText("Titlul evenimentului exista deja!");
+                saveLabel.setText("Titlul evenimentului există deja!");
             }
 
         }
     }
 }
-
-

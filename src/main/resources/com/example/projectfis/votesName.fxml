@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="359.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.VotesNameController">
     <children>
         <ComboBox fx:id="cbBox" layoutX="24.0" layoutY="211.0" onAction="#select" prefWidth="150.0" promptText="Alege" style="-fx-background-color: #f76300;" />
@@ -19,12 +18,12 @@
          </font>
       </Label>
         <Label fx:id="labelvote" alignment="CENTER" layoutX="224.0" layoutY="273.0" prefHeight="26.0" prefWidth="230.0" textFill="#f76300" />
-      <Label alignment="CENTER" layoutX="45.0" layoutY="23.0" prefHeight="46.0" prefWidth="368.0" text="Votarea numelui pentru puiutul de leu" textFill="#f76300">
+      <Label alignment="CENTER" layoutX="45.0" layoutY="23.0" prefHeight="46.0" prefWidth="368.0" text="Votarea numelui pentru puiul de leu" textFill="#f76300">
          <font>
             <Font name="French Script MT" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="110.0" prefHeight="33.0" prefWidth="175.0" text="Numele ales de dvs" textFill="#f76300">
+      <Label layoutX="24.0" layoutY="110.0" prefHeight="34.0" prefWidth="200.0" text="Numele ales de dumneavoastră" textFill="#f76300">
          <font>
             <Font size="14.0" />
          </font>
@@ -34,6 +33,6 @@
             <Image url="@../../../../../../Evenimente/leu.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="cancelButton" layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #f76300;" text="Inchidere" textFill="WHITE" />
+      <Button fx:id="cancelButton" layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #000000;" text="Închidere" textFill="WHITE" />
     </children>
 </AnchorPane>

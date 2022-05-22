@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane prefHeight="272.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.AfisareVoturiController">
    <children>
       <AnchorPane layoutY="1.0" prefHeight="254.0" prefWidth="197.0">
@@ -18,15 +17,15 @@
                   <Image url="@../../../../../../Evenimente/leu1.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="back" layoutX="14.0" layoutY="227.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f76300;" text="Inapoi" textFill="WHITE" />
-            <Button fx:id="actualizare" layoutX="160.0" layoutY="227.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
+            <Button fx:id="back" layoutX="8.0" layoutY="240.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #000000;" text="Închidere" textFill="WHITE" />
+            <Button fx:id="actualizare" layoutX="161.0" layoutY="240.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
          </children>
       </AnchorPane>
       <TableView fx:id="table" layoutX="240.0" layoutY="-2.0" prefHeight="275.0" prefWidth="250.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="32.00007629394531" text="ID" />
           <TableColumn fx:id="name" prefWidth="107.199951171875" text="Nume propus" />
-            <TableColumn fx:id="count" prefWidth="109.19998168945312" text="Numar voturi" />
+            <TableColumn fx:id="count" prefWidth="109.19998168945312" text="Număr voturi" />
         </columns>
       </TableView>
    </children>

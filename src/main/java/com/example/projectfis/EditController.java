@@ -65,7 +65,7 @@ public class EditController {
                 while (queryResult.next()) {
 
                     if (queryResult.getInt(1) != 1) {
-                        editLabel.setText("Informatiile au fost editate!");
+                        editLabel.setText("Informațiile au fost editate!");
                         st2.executeUpdate(animale);
                         ok = 1;
 
@@ -73,7 +73,7 @@ public class EditController {
 
                 }
 
-                if (ok == 0) editLabel.setText("ID-ul introdus nu exista!");
+                if (ok == 0) editLabel.setText("ID-ul introdus nu există!");
 
 
 

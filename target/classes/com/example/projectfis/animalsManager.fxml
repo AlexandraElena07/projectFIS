@@ -80,16 +80,16 @@
                         <Image url="@../../../../../../imageAnimale/vulpe.jpg" />
                     </image>
                 </ImageView>
-                <Button layoutX="6.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
+                <Button fx:id="back" layoutX="6.0" layoutY="506.0" mnemonicParsing="false" onAction="#switchTOMenuPersonal" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
                 <ImageView fx:id="pozaFlamingo" fitHeight="92.0" fitWidth="128.0" layoutX="126.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../../../imageAnimale/flamingo.jpg" />
                     </image>
                 </ImageView>
-                <Button fx:id="adauga" layoutX="96.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adauga" textFill="WHITE" />
+                <Button fx:id="adauga" layoutX="91.0" layoutY="506.0" mnemonicParsing="false" onAction="#getAddView" style="-fx-background-color: #f76300;" text="Adăugare" textFill="WHITE" />
                 <Button fx:id="editare" layoutX="101.0" layoutY="449.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: #f76300;" text="Editare" textFill="WHITE" />
                 <Button fx:id="actualizare" layoutX="177.0" layoutY="506.0" mnemonicParsing="false" onAction="#refteshTable" style="-fx-background-color: #f76300;" text="Actualizare" textFill="WHITE" />
-                <Button fx:id="stergere" layoutX="188.0" layoutY="449.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #f76300;" text="Stergere" textFill="WHITE" />
+                <Button fx:id="stergere" layoutX="188.0" layoutY="449.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #f76300;" text="Ștergere" textFill="WHITE" />
             </children>
         </AnchorPane>
     </left>

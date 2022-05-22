@@ -8,13 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="479.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1 " fx:controller="com.example.projectfis.BileteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="479.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectfis.BileteController">
     <children>
-        <TextField fx:id="card" layoutX="37.0" layoutY="119.0" promptText="Numar card" />
-        <TextField fx:id="nume" layoutX="37.0" layoutY="185.0" promptText="Numele si prenumele" />
-        <Label layoutX="37.0" layoutY="93.0" prefHeight="26.0" prefWidth="150.0" text="Numar Card" textFill="#f76300" />
-        <Label layoutX="37.0" layoutY="159.0" prefHeight="26.0" prefWidth="150.0" text="Numele si prenumele" textFill="#f76300" />
+        <TextField fx:id="card" layoutX="37.0" layoutY="119.0" promptText="Număr card" />
+        <TextField fx:id="nume" layoutX="37.0" layoutY="185.0" promptText="Numele și prenumele" />
+        <Label layoutX="37.0" layoutY="93.0" prefHeight="26.0" prefWidth="150.0" text="Număr Card" textFill="#f76300" />
+        <Label layoutX="37.0" layoutY="159.0" prefHeight="26.0" prefWidth="150.0" text="Numele și prenumele" textFill="#f76300" />
         <Button fx:id="adult" layoutX="24.0" layoutY="249.0" mnemonicParsing="false" onAction="#achizitionareBileteAdulti" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Bilet adult" textFill="WHITE" />
         <Button fx:id="copil" layoutX="151.0" layoutY="249.0" mnemonicParsing="false" onAction="#achizitionareBileteCopl" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Bilet copil" textFill="WHITE" />
         <Label fx:id="labelBilete" alignment="CENTER" layoutX="45.0" layoutY="281.0" prefHeight="26.0" prefWidth="162.0" textAlignment="CENTER" textFill="#f76300" />
@@ -23,11 +22,11 @@
                 <Image url="@../../../../../../Bilete/leu.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="159.0" layoutY="23.0" prefHeight="26.0" prefWidth="162.0" text="Achizitionare bilete" textAlignment="CENTER" textFill="#f76300">
+        <Label layoutX="159.0" layoutY="23.0" prefHeight="26.0" prefWidth="162.0" text="Achiziționare bilete" textAlignment="CENTER" textFill="#f76300">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="back" layoutX="393.0" layoutY="275.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Back" textFill="WHITE" />
+        <Button fx:id="back" layoutX="393.0" layoutY="275.0" mnemonicParsing="false" onAction="#switchTOMenu" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #f76300;" text="Înapoi" textFill="WHITE" />
     </children>
 </AnchorPane>

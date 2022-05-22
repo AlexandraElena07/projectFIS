@@ -49,14 +49,14 @@
             </font>
         </Label>
         <PasswordField fx:id="parolaField" layoutX="84.0" layoutY="281.0" prefHeight="25.0" prefWidth="336.0" promptText="Parola" />
-        <Label layoutX="84.0" layoutY="318.0" prefHeight="19.0" prefWidth="118.0" text="Confirmare parola">
+        <Label layoutX="84.0" layoutY="318.0" prefHeight="19.0" prefWidth="118.0" text="Confirmare parolă">
             <font>
                 <Font size="13.0" />
             </font>
         </Label>
-        <PasswordField fx:id="confirmareField" layoutX="84.0" layoutY="337.0" prefHeight="25.0" prefWidth="336.0" promptText="Confirmare parola" />
+        <PasswordField fx:id="confirmareField" layoutX="84.0" layoutY="337.0" prefHeight="25.0" prefWidth="336.0" promptText="Confirmare parolă" />
         <Button fx:id="inregistrareButton" layoutX="84.0" layoutY="404.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="26.0" prefWidth="336.0" style="-fx-background-color: #f76300;" text="Înregistrare" textFill="WHITE" />
-        <Button fx:id="anulareButton" layoutX="84.0" layoutY="443.0" mnemonicParsing="false" onAction="#anulareButtonOnAction" prefHeight="26.0" prefWidth="336.0" style="-fx-background-color: #f76300;" text="Anulare" textFill="WHITE" />
+        <Button fx:id="anulareButton" layoutX="84.0" layoutY="443.0" mnemonicParsing="false" onAction="#anulareButtonOnAction" prefHeight="26.0" prefWidth="336.0" style="-fx-background-color: #f76300;" text="Înapoi la autentificare" textFill="WHITE" />
         <Label fx:id="inregistrareMessage" alignment="CENTER" layoutX="84.0" layoutY="481.0" prefHeight="26.0" prefWidth="336.0" textFill="#f76300" />
         <Label fx:id="parolaMessage" layoutX="196.0" layoutY="319.0" prefHeight="18.0" prefWidth="223.0" textFill="#f76300" />
     </children>

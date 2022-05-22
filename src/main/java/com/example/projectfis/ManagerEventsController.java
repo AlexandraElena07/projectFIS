@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -67,6 +69,10 @@ public class ManagerEventsController implements Initializable {
 
     ResultSet resultSet = null;
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -84,11 +90,12 @@ public class ManagerEventsController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader(AddController.class.getResource("addEvents.fxml"));
             Stage stage= new Stage();
-            Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene1);
-            stage.setTitle("Adaugare");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.setTitle("Adăugare Eveniment");
             stage.show();
+
+
         } catch(IOException ex) {
             Logger.getLogger(ManagerEventsController.class.getName()).log(Level.SEVERE,null,ex);
         }
@@ -97,13 +104,11 @@ public class ManagerEventsController implements Initializable {
     @FXML
     public void delete(ActionEvent event) {
         try {
-
             FXMLLoader fxmlLoader = new FXMLLoader(DeleteController.class.getResource("deleteEvents.fxml"));
             Stage stage= new Stage();
-            Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene1);
-            stage.setTitle("Stergere");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.setTitle("Ștergere eveniment");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerEventsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -116,10 +121,9 @@ public class ManagerEventsController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader(EditController.class.getResource("editEvents.fxml"));
             Stage stage= new Stage();
-            Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene1);
-            stage.setTitle("Editare");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.setTitle("Editare Eveniment");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerEventsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -132,10 +136,9 @@ public class ManagerEventsController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader(EditController.class.getResource("afisareVoturi.fxml"));
             Stage stage= new Stage();
-            Scene scene1 = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(scene1);
-            stage.setTitle("Afisare voturi");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.setTitle("Afișare voturi");
             stage.show();
         } catch(IOException ex) {
             Logger.getLogger(ManagerEventsController.class.getName()).log(Level.SEVERE,null,ex);
@@ -188,6 +191,16 @@ public class ManagerEventsController implements Initializable {
 
 
         events.setItems(oblist);
+    }
+
+
+
+    public void switchTOMenuPersonal(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load((getClass().getResource("menuPersonal.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Meniu Personal");
+        stage.show();
     }
 
 
