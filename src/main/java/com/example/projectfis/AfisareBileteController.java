@@ -52,7 +52,7 @@ public class AfisareBileteController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        File animalFile = new File("afisareDonatie/animal.jpg");
+        File animalFile = new File("afisareDonatie/animal2.jpg");
         Image animalImage = new Image(animalFile.toURI().toString());
         poza.setImage(animalImage);
 
