@@ -21,7 +21,7 @@
                         <Font name="Algerian" size="24.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="50.0" prefWidth="275.0" text="Stergere animal" textFill="#f76300">
+                <Label alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="275.0" text="Stergere Eveniment" textFill="#f76300">
                     <font>
                         <Font name="Gigi" size="31.0" />
                     </font>
